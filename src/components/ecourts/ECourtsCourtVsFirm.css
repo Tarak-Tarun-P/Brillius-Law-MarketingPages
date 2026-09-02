@@ -1,0 +1,142 @@
+.ecourts-vs-section {
+  padding: 90px 0;
+  background: var(--white);
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+  border-bottom: 1px solid rgba(9, 21, 38, 0.06);
+  position: relative;
+}
+
+.vs-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 52px auto;
+}
+
+.vs-title {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+}
+
+.vs-desc {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.vs-workspace-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.vs-panel-card {
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 16px 40px -8px rgba(9, 21, 38, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-topbar {
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.panel-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.panel-title {
+  font-size: 13px;
+  color: var(--white);
+}
+
+.panel-status-tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.official-tag {
+  background: rgba(14, 165, 233, 0.2);
+  color: #38BDF8;
+}
+
+.firm-tag {
+  background: rgba(198, 161, 91, 0.25);
+  color: var(--gold-light);
+}
+
+.panel-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.panel-item-box {
+  background: var(--white);
+  border: 1px solid rgba(9, 21, 38, 0.06);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.p-lbl {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: var(--gold-dark);
+  letter-spacing: 0.04em;
+}
+
+.p-val {
+  font-size: 13px;
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.p-val-italic {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0;
+}
+
+.panel-footer {
+  background: var(--white);
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 800px) {
+  .vs-workspace-grid {
+    grid-template-columns: 1fr;
+  }
+}

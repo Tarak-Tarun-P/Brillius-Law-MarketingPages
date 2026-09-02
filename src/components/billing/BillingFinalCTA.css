@@ -1,0 +1,159 @@
+.billing-final-cta-section {
+  padding: 80px 0 100px 0;
+  background: var(--bg-ivory);
+  position: relative;
+}
+
+.billing-final-cta-card {
+  position: relative;
+  background-color: #091526;
+  border-radius: 24px;
+  padding: 64px 40px;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid rgba(198, 161, 91, 0.35);
+  box-shadow: 0 24px 60px -12px rgba(9, 21, 38, 0.35);
+}
+
+.final-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.final-glow.gold-glow {
+  top: -40px;
+  right: 10%;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(198, 161, 91, 0.22) 0%, transparent 70%);
+}
+
+.final-glow.navy-glow {
+  bottom: -40px;
+  left: 10%;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(19, 43, 71, 0.6) 0%, transparent 70%);
+}
+
+.final-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.final-eyebrow-wrapper {
+  margin-bottom: 16px;
+}
+
+.final-eyebrow-text {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.final-cta-headline {
+  font-family: var(--font-serif);
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 18px;
+}
+
+.final-cta-description {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #CBD5E1;
+  margin-bottom: 36px;
+}
+
+.final-cta-buttons-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.btn-cta-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 52px;
+  padding: 0 28px;
+  background: var(--gold);
+  color: var(--primary-dark);
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(198, 161, 91, 0.3);
+  transition: var(--transition-smooth);
+}
+
+.btn-cta-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(198, 161, 91, 0.45);
+}
+
+.btn-cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 52px;
+  padding: 0 26px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.btn-cta-ghost:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.final-assurance-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.assurance-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #94A3B8;
+}
+
+.assurance-divider {
+  color: rgba(198, 161, 91, 0.4);
+}
+
+@media (max-width: 640px) {
+  .billing-final-cta-card {
+    padding: 40px 20px;
+  }
+
+  .final-cta-headline {
+    font-size: 32px;
+  }
+}

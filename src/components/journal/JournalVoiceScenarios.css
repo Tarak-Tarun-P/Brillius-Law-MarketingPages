@@ -1,0 +1,139 @@
+.journal-scenarios-section {
+  position: relative;
+  padding: 80px 0;
+  background: var(--white);
+  z-index: 10;
+}
+
+.scenarios-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 50px auto;
+}
+
+.scenarios-eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.scenarios-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+
+.scenarios-desc {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.scenarios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.scenario-card {
+  background: var(--bg-ivory);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.scenario-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(198, 161, 91, 0.5);
+  box-shadow: 0 12px 28px -4px rgba(9, 21, 38, 0.08);
+  background: var(--white);
+}
+
+.scenario-card.featured-scenario-card {
+  border-color: var(--gold);
+  box-shadow: 0 6px 20px rgba(198, 161, 91, 0.12);
+  background: var(--white);
+}
+
+.scenario-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.scenario-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--white);
+  border: 1px solid rgba(198, 161, 91, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scenario-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.scenario-desc {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0 0 14px 0;
+  flex: 1;
+}
+
+.scenario-quote-box {
+  background: var(--white);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-left: 2.5px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.quote-label {
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+}
+
+.quote-text {
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--primary-dark);
+  margin: 0;
+  font-style: italic;
+}
+
+@media (max-width: 960px) {
+  .scenarios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .scenarios-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,283 @@
+.case-specific-ai-section {
+  padding: 90px 0;
+  background: var(--white);
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+  border-bottom: 1px solid rgba(9, 21, 38, 0.06);
+  position: relative;
+}
+
+.case-ai-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px auto;
+}
+
+.case-ai-title {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+}
+
+.case-ai-desc {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.case-ai-workspace-card {
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 16px 40px -8px rgba(9, 21, 38, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.matter-active-header {
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.matter-meta-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.matter-pill-tag {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  background: rgba(198, 161, 91, 0.25);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.matter-title-text {
+  font-size: 15px;
+  color: var(--white);
+}
+
+.matter-court-text {
+  font-size: 12px;
+  color: #94A3B8;
+}
+
+.matter-badge-status {
+  font-size: 11px;
+  font-weight: 600;
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.preset-questions-bar {
+  background: var(--white);
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(9, 21, 38, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.preset-bar-label {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+}
+
+.preset-chips-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.preset-chip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.preset-chip-btn:hover {
+  border-color: var(--gold);
+}
+
+.preset-chip-btn.active-preset {
+  background: var(--primary-dark);
+  color: var(--white);
+  border-color: var(--primary-dark);
+}
+
+.case-qa-container {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.case-inquiry-box {
+  background: var(--white);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inquiry-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inquiry-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.inquiry-category {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold-dark);
+}
+
+.inquiry-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.case-response-box {
+  background: var(--white);
+  border: 1px solid rgba(198, 161, 91, 0.35);
+  border-left: 4px solid var(--gold);
+  border-radius: 12px;
+  padding: 22px 24px;
+  box-shadow: 0 4px 18px rgba(198, 161, 91, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.response-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.response-title-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.response-badge-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.response-conf-label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.response-text-body {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.response-sources-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(9, 21, 38, 0.1);
+}
+
+.sources-block-heading {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--gold-dark);
+  letter-spacing: 0.05em;
+}
+
+.sources-pills-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.source-citation-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(198, 161, 91, 0.1);
+  border: 1px solid rgba(198, 161, 91, 0.3);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.source-doc-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.source-page-tag {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--gold-dark);
+  background: var(--white);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.case-ai-footer-note {
+  background: rgba(9, 21, 38, 0.03);
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .case-qa-container {
+    padding: 16px;
+  }
+}

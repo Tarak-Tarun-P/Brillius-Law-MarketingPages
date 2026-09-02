@@ -1,0 +1,131 @@
+.solutions-by-work-section {
+  position: relative;
+  padding: 80px 0;
+  background: var(--white);
+  z-index: 10;
+}
+
+.by-work-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 54px auto;
+}
+
+.by-work-eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.by-work-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+
+.by-work-desc {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.by-work-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.by-work-card {
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 16px;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.by-work-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(198, 161, 91, 0.5);
+  box-shadow: 0 12px 28px -4px rgba(9, 21, 38, 0.08);
+  background: var(--white);
+}
+
+.by-work-card.featured-work-card {
+  border-color: rgba(198, 161, 91, 0.4);
+  background: rgba(247, 245, 239, 0.6);
+}
+
+.by-work-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.by-work-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--white);
+  border: 1px solid rgba(198, 161, 91, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.by-work-num {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+  font-family: monospace;
+}
+
+.by-work-meta-row {
+  margin-bottom: 8px;
+}
+
+.by-work-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.by-work-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.by-work-card-desc {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1200px) {
+  .by-work-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .by-work-grid {
+    grid-template-columns: 1fr;
+  }
+}

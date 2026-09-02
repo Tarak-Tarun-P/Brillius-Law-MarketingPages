@@ -1,0 +1,131 @@
+.research-trail-section {
+  position: relative;
+  padding: 80px 0;
+  background: var(--white);
+  z-index: 10;
+}
+
+.trail-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 50px auto;
+}
+
+.trail-eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.trail-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+
+.trail-desc {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.trail-visual-container {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.trail-node-box {
+  width: 100%;
+  background: var(--bg-ivory);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 4px 16px rgba(9, 21, 38, 0.04);
+}
+
+.trail-node-box.node-issue {
+  border-left: 4px solid var(--gold);
+  background: var(--white);
+}
+
+.trail-node-box.node-case {
+  border: 1.5px solid var(--gold);
+  background: var(--white);
+  box-shadow: 0 8px 24px rgba(198, 161, 91, 0.12);
+}
+
+.node-step-pill {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.node-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.node-cit {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+.node-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.node-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.node-text {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.trail-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0;
+}
+
+.trail-branch-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.branch-node {
+  background: var(--white);
+}
+
+@media (max-width: 700px) {
+  .trail-branch-row {
+    grid-template-columns: 1fr;
+  }
+}

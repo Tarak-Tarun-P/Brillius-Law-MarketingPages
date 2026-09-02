@@ -1,0 +1,151 @@
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Base Atmospheric Radial Gradients */
+.bg-gradient {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(45px);
+}
+
+/* Gradient A: Right-Center Navy Depth (8-12% opacity) */
+.bg-gradient-a {
+  top: 5%;
+  right: -80px;
+  width: 820px;
+  height: 820px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(23, 54, 93, 0.11) 0%,
+    rgba(23, 54, 93, 0.04) 55%,
+    rgba(247, 245, 239, 0) 75%
+  );
+  z-index: 2;
+}
+
+/* Gradient B: Center Warm Gold Ambient Glow (5-8% opacity) */
+.bg-gradient-b {
+  top: 25%;
+  left: 42%;
+  width: 680px;
+  height: 680px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(198, 161, 91, 0.075) 0%,
+    rgba(198, 161, 91, 0.025) 50%,
+    rgba(247, 245, 239, 0) 75%
+  );
+  z-index: 2;
+}
+
+/* Gradient C: Bottom-Right Deep Navy Tone (5-8% opacity) */
+.bg-gradient-c {
+  bottom: -60px;
+  right: 5%;
+  width: 700px;
+  height: 600px;
+  background: radial-gradient(
+    ellipse at 50% 60%,
+    rgba(23, 54, 93, 0.07) 0%,
+    rgba(9, 21, 38, 0.03) 50%,
+    rgba(247, 245, 239, 0) 75%
+  );
+  z-index: 2;
+}
+
+/* Dedicated Lady Justice Torso Halo (500-700px radius) */
+.bg-gradient-halo {
+  top: 15%;
+  right: 10%;
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(198, 161, 91, 0.09) 0%,
+    rgba(23, 54, 93, 0.04) 40%,
+    rgba(247, 245, 239, 0) 70%
+  );
+  z-index: 3;
+}
+
+/* Vector Canvas containing Architecture, Scales, Docs, Dot Grids & Arcs */
+.hero-vector-canvas {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  min-height: 850px;
+  z-index: 4;
+}
+
+/* Responsive Behavior */
+@media (max-width: 1200px) {
+  .bg-gradient-a {
+    width: 650px;
+    height: 650px;
+    right: -120px;
+  }
+
+  .bg-gradient-b {
+    left: 35%;
+    width: 550px;
+    height: 550px;
+  }
+}
+
+@media (max-width: 900px) {
+  .bg-gradient-a {
+    width: 500px;
+    height: 500px;
+    right: -150px;
+    opacity: 0.7;
+  }
+
+  .bg-gradient-b {
+    display: none;
+  }
+
+  .bg-architecture-courthouse {
+    opacity: 0.04;
+  }
+
+  .bg-symbol-scales {
+    opacity: 0.04;
+  }
+}
+
+@media (max-width: 640px) {
+  .bg-tech-grid {
+    display: none;
+  }
+
+  .bg-architecture-courthouse {
+    display: none;
+  }
+
+  .bg-blueprint-connectors {
+    display: none;
+  }
+
+  .bg-legal-doc-left {
+    display: none;
+  }
+
+  .bg-gradient-halo {
+    width: 380px;
+    height: 380px;
+    right: -20px;
+  }
+}

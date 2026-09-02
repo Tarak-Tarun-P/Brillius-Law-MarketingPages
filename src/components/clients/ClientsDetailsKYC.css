@@ -1,0 +1,177 @@
+.clients-details-kyc-section {
+  position: relative;
+  padding: 80px 0;
+  background: var(--bg-ivory);
+  z-index: 10;
+}
+
+.details-kyc-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 50px auto;
+}
+
+.details-kyc-eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.details-kyc-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+
+.details-kyc-desc {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.details-kyc-dual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.kyc-type-card {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 34px 28px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.kyc-type-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(198, 161, 91, 0.5);
+  box-shadow: 0 12px 28px -4px rgba(9, 21, 38, 0.08);
+}
+
+.kyc-type-card.featured-kyc-card {
+  border-color: var(--gold);
+  box-shadow: 0 8px 26px rgba(198, 161, 91, 0.12);
+}
+
+.kyc-card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.kyc-icon-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar-gold {
+  border-color: rgba(198, 161, 91, 0.3);
+  background: rgba(198, 161, 91, 0.12);
+}
+
+.kyc-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary-dark);
+  background: var(--bg-ivory);
+  padding: 2px 7px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.badge-gold {
+  color: var(--gold-dark);
+  background: rgba(198, 161, 91, 0.15);
+}
+
+.kyc-entity-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.kyc-card-intro {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin-bottom: 22px;
+}
+
+.kyc-fields-sample {
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.06);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.kyc-field-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(9, 21, 38, 0.05);
+  padding-bottom: 8px;
+}
+
+.kyc-field-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.field-lbl {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.field-val {
+  font-size: 12.5px;
+  color: var(--primary-dark);
+}
+
+.field-val.font-mono {
+  font-family: monospace;
+  font-weight: 600;
+  background: var(--white);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(9, 21, 38, 0.08);
+}
+
+.field-val.font-bold {
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .details-kyc-dual-grid {
+    grid-template-columns: 1fr;
+  }
+}

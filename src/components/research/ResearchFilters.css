@@ -1,0 +1,139 @@
+.research-filters-section {
+  position: relative;
+  padding: 80px 0;
+  background: var(--bg-ivory);
+  z-index: 10;
+}
+
+.filters-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 50px auto;
+}
+
+.filters-eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.filters-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+
+.filters-desc {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.filters-card-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  box-shadow: 0 16px 40px -8px rgba(9, 21, 38, 0.08);
+  overflow: hidden;
+}
+
+.filters-topbar {
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.f-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.f-topbar-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.f-topbar-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--gold-light);
+  background: rgba(198, 161, 91, 0.2);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.filters-grid {
+  padding: 26px 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.filter-group-box {
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 14px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-group-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-group-label {
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.filter-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--white);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  padding: 7px 12px;
+  border-radius: 8px;
+}
+
+.filter-pill.active {
+  background: var(--primary-dark);
+  color: var(--white);
+  border-color: var(--primary-dark);
+}
+
+@media (max-width: 850px) {
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,240 @@
+.ready-templates-section {
+  padding: 90px 0;
+  background: var(--white);
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+  border-bottom: 1px solid rgba(9, 21, 38, 0.06);
+  position: relative;
+}
+
+.ready-templates-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 52px auto;
+}
+
+.ready-templates-title {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+}
+
+.ready-templates-desc {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.templates-selector-grid {
+  display: grid;
+  grid-template-columns: 42% 58%;
+  gap: 32px;
+  align-items: start;
+}
+
+.templates-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tpl-card-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tpl-card-btn:hover {
+  background: var(--white);
+  border-color: rgba(198, 161, 91, 0.4);
+  transform: translateX(4px);
+}
+
+.tpl-card-btn.active-tpl {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  box-shadow: 0 8px 24px -4px rgba(9, 21, 38, 0.2);
+}
+
+.tpl-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(198, 161, 91, 0.15);
+  color: var(--gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.active-tpl .tpl-icon-box {
+  background: rgba(198, 161, 91, 0.25);
+  color: var(--gold-light);
+}
+
+.tpl-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.tpl-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.tpl-name {
+  font-size: 13.5px;
+  color: var(--primary-dark);
+}
+
+.active-tpl .tpl-name {
+  color: var(--white);
+}
+
+.tpl-cpc-pill {
+  font-size: 9.5px;
+  font-weight: 700;
+  background: rgba(9, 21, 38, 0.08);
+  color: var(--primary-dark);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.active-tpl .tpl-cpc-pill {
+  background: rgba(198, 161, 91, 0.2);
+  color: var(--gold-light);
+}
+
+.tpl-cat {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.active-tpl .tpl-cat {
+  color: #CBD5E1;
+}
+
+/* Right Detail Card */
+.template-detail-preview {
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 16px 40px -8px rgba(9, 21, 38, 0.06);
+  overflow: hidden;
+}
+
+.preview-topbar {
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.preview-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.preview-heading {
+  font-size: 14.5px;
+  color: var(--white);
+}
+
+.preview-cpc-tag {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--gold-light);
+  background: rgba(198, 161, 91, 0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.preview-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.p-cat-label {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: var(--gold-dark);
+  letter-spacing: 0.04em;
+}
+
+.p-desc-text {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.included-clauses-box {
+  background: var(--white);
+  border: 1px solid rgba(9, 21, 38, 0.06);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.included-title {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.clauses-tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.clause-chip {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  background: var(--bg-ivory);
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(9, 21, 38, 0.06);
+}
+
+.preview-footer {
+  background: var(--white);
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 860px) {
+  .templates-selector-grid {
+    grid-template-columns: 1fr;
+  }
+}

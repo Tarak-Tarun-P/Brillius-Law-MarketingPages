@@ -1,0 +1,243 @@
+.journal-voice-section {
+  position: relative;
+  padding: 80px 0;
+  background: var(--bg-ivory);
+  z-index: 10;
+}
+
+.voice-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 40px auto;
+}
+
+.voice-eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.voice-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+
+.voice-desc {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.voice-flow-strip {
+  max-width: 740px;
+  margin: 0 auto 36px auto;
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 16px rgba(9, 21, 38, 0.04);
+}
+
+.voice-flow-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.v-flow-num {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gold-dark);
+  background: rgba(198, 161, 91, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.v-flow-text {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--primary-dark);
+}
+
+.v-flow-arrow {
+  flex-shrink: 0;
+}
+
+.voice-card-box {
+  max-width: 860px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  box-shadow: 0 16px 40px -8px rgba(9, 21, 38, 0.08);
+  overflow: hidden;
+}
+
+.voice-card-topbar {
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.v-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.v-topbar-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.v-topbar-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--gold-light);
+  background: rgba(198, 161, 91, 0.2);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.voice-card-body {
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.voice-recording-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(198, 161, 91, 0.1);
+  border: 1px solid rgba(198, 161, 91, 0.3);
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+
+.voice-recording-mic-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(198, 161, 91, 0.3);
+}
+
+.voice-waveform-display {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+}
+
+.wave-bar {
+  width: 3.5px;
+  background: var(--gold-dark);
+  border-radius: 2px;
+}
+
+.wave-bar.wb-1 { height: 8px; }
+.wave-bar.wb-2 { height: 12px; }
+.wave-bar.wb-3 { height: 18px; }
+.wave-bar.wb-4 { height: 24px; }
+.wave-bar.wb-5 { height: 16px; }
+.wave-bar.wb-6 { height: 28px; }
+
+.recording-time-pill {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  background: var(--white);
+  border: 1px solid rgba(9, 21, 38, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.spoken-text-box {
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.spoken-text-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.spoken-quote {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--primary-dark);
+  margin: 0;
+  font-style: italic;
+}
+
+.voice-action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.voice-attached-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.btn-save-voice-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: var(--primary-dark);
+  color: var(--white);
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: default;
+}
+
+@media (max-width: 700px) {
+  .voice-flow-strip {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .v-flow-arrow {
+    display: none;
+  }
+}

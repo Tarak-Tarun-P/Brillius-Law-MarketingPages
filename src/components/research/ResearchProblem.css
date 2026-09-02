@@ -1,0 +1,92 @@
+.research-problem-section {
+  padding: 85px 0;
+  background: var(--white);
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+  border-bottom: 1px solid rgba(9, 21, 38, 0.06);
+  position: relative;
+}
+
+.problem-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px auto;
+}
+
+.problem-title {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+}
+
+.problem-desc {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.problem-points-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.problem-point-card {
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.25s ease;
+}
+
+.problem-point-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(198, 161, 91, 0.4);
+  box-shadow: 0 10px 24px -4px rgba(9, 21, 38, 0.08);
+}
+
+.point-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.point-number-pill {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--white);
+  background: var(--primary-dark);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.point-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(198, 161, 91, 0.12);
+  color: var(--gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.point-headline {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.point-explanation {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin: 0;
+}

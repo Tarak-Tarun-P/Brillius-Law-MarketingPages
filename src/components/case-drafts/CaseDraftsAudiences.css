@@ -1,0 +1,116 @@
+.casedrafts-audiences-section {
+  padding: 90px 0;
+  background: var(--white);
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+  border-bottom: 1px solid rgba(9, 21, 38, 0.06);
+  position: relative;
+}
+
+.draft-aud-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 52px auto;
+}
+
+.draft-aud-title {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+}
+
+.draft-aud-desc {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.draft-aud-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.casedraft-aud-card {
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 18px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 4px 18px rgba(9, 21, 38, 0.03);
+  transition: all 0.25s ease;
+}
+
+.casedraft-aud-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(198, 161, 91, 0.4);
+  box-shadow: 0 12px 28px -4px rgba(9, 21, 38, 0.08);
+}
+
+.casedraft-aud-card.featured-draft-aud {
+  background: var(--white);
+  border-color: rgba(198, 161, 91, 0.45);
+  box-shadow: 0 8px 24px -4px rgba(198, 161, 91, 0.12);
+}
+
+.d-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.d-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(198, 161, 91, 0.12);
+  color: var(--gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-draft-aud .d-icon-circle {
+  background: var(--primary-dark);
+  color: var(--gold-light);
+}
+
+.d-title-text {
+  font-size: 17px;
+  color: var(--primary-dark);
+}
+
+.d-quote-text {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0;
+  flex: 1;
+}
+
+.d-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+}
+
+.d-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--primary-dark);
+}
+
+.d-point-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}

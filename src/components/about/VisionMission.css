@@ -1,0 +1,141 @@
+.vision-mission-section {
+  position: relative;
+  padding: 60px 0 80px 0;
+  background: var(--bg-ivory);
+  z-index: 10;
+}
+
+.vision-mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.vm-card {
+  border-radius: 24px;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 30px -4px rgba(9, 21, 38, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-card {
+  background: var(--primary-dark);
+  color: var(--white);
+  border: 1px solid rgba(198, 161, 91, 0.3);
+}
+
+.mission-card {
+  background: var(--white);
+  color: var(--primary-dark);
+  border: 1px solid var(--card-border);
+}
+
+.vm-icon-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.vm-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vision-card .vm-icon-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(198, 161, 91, 0.4);
+}
+
+.mission-card .vm-icon-box {
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.12);
+}
+
+.vm-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vision-card .vm-eyebrow {
+  color: var(--gold);
+}
+
+.mission-card .vm-eyebrow {
+  color: var(--gold-dark);
+}
+
+.vm-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+
+.vision-card .vm-title {
+  color: var(--white);
+}
+
+.mission-card .vm-title {
+  color: var(--primary-dark);
+}
+
+.vm-text {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  flex: 1;
+}
+
+.vision-card .vm-text {
+  color: #94A3B8;
+}
+
+.mission-card .vm-text {
+  color: var(--text-secondary);
+}
+
+.vm-badge-footer {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.vision-card .vm-badge-footer {
+  background: rgba(198, 161, 91, 0.15);
+  color: var(--gold-light);
+  border: 1px solid rgba(198, 161, 91, 0.3);
+}
+
+.mission-card .vm-badge-footer {
+  background: var(--bg-ivory);
+  color: var(--primary-dark);
+  border: 1px solid rgba(9, 21, 38, 0.1);
+}
+
+@media (max-width: 960px) {
+  .vision-mission-grid {
+    grid-template-columns: 1fr;
+  }
+  .vm-card {
+    padding: 36px 24px;
+  }
+  .vm-title {
+    font-size: 24px;
+  }
+}

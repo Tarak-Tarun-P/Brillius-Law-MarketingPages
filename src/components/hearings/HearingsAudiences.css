@@ -1,0 +1,151 @@
+.hearings-aud-section {
+  position: relative;
+  padding: 80px 0;
+  background: var(--white);
+  z-index: 10;
+}
+
+.hearings-aud-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 50px auto;
+}
+
+.hearings-aud-eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.hearings-aud-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+
+.hearings-aud-desc {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.hearings-aud-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.hearings-aud-card {
+  background: var(--bg-ivory);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.hearings-aud-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(198, 161, 91, 0.5);
+  box-shadow: 0 12px 28px -4px rgba(9, 21, 38, 0.08);
+}
+
+.hearings-aud-card.featured-aud-card {
+  background: var(--white);
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 8px 30px rgba(198, 161, 91, 0.12);
+}
+
+.aud-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.aud-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: var(--bg-ivory);
+  border: 1px solid rgba(198, 161, 91, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-aud-card .aud-icon-wrap {
+  background: rgba(198, 161, 91, 0.15);
+}
+
+.aud-badge-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary-dark);
+  background: var(--bg-ivory);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.aud-card-headline {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+.aud-card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 22px;
+}
+
+.aud-divider {
+  height: 1px;
+  background: rgba(9, 21, 38, 0.06);
+  margin-bottom: 20px;
+}
+
+.aud-points-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.aud-points-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--primary-dark);
+}
+
+.point-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .hearings-aud-grid {
+    grid-template-columns: 1fr;
+  }
+}

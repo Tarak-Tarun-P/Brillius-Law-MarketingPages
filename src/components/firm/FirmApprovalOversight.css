@@ -1,0 +1,154 @@
+.firm-approval-section {
+  padding: 90px 0;
+  background: var(--white);
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+  border-bottom: 1px solid rgba(9, 21, 38, 0.06);
+  position: relative;
+}
+
+.approval-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 52px auto;
+}
+
+.approval-title {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+}
+
+.approval-desc {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.approval-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.approval-item-card {
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 16px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(9, 21, 38, 0.02);
+  transition: all 0.25s ease;
+}
+
+.approval-item-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(198, 161, 91, 0.4);
+  box-shadow: 0 10px 24px -4px rgba(9, 21, 38, 0.08);
+}
+
+.card-top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.appr-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(198, 161, 91, 0.12);
+  color: var(--gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.approval-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.status-pending {
+  background: rgba(245, 158, 11, 0.14);
+  color: #B45309;
+}
+
+.status-approved {
+  background: rgba(16, 185, 129, 0.14);
+  color: #047857;
+}
+
+.appr-card-title {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.appr-doc-name {
+  font-size: 16px;
+  color: var(--primary-dark);
+  line-height: 1.35;
+}
+
+.appr-matter-name {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.approval-workflow-box {
+  background: var(--white);
+  border: 1px solid rgba(9, 21, 38, 0.06);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.author-line,
+.reviewer-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.dot-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-muted);
+}
+
+.dot-bullet.gold-bullet {
+  background: var(--gold);
+}
+
+.role-text {
+  color: var(--text-secondary);
+}
+
+.highlight-reviewer {
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.flow-down-arrow {
+  padding-left: 20px;
+}

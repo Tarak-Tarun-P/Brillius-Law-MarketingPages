@@ -1,0 +1,148 @@
+.wa-drafts-section {
+  padding: 90px 0;
+  background: var(--white);
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+  border-bottom: 1px solid rgba(9, 21, 38, 0.06);
+  position: relative;
+}
+
+.wa-drafts-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px auto;
+}
+
+.wa-drafts-title {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+}
+
+.wa-drafts-desc {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.wa-draft-prog-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.prog-card {
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 12px;
+  padding: 12px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 200px;
+}
+
+.prog-card.active-prog-card {
+  border-color: rgba(198, 161, 91, 0.4);
+  background: var(--white);
+  box-shadow: 0 4px 16px rgba(9, 21, 38, 0.05);
+}
+
+.prog-step-num {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--gold-dark);
+}
+
+.prog-title {
+  font-size: 13px;
+  color: var(--primary-dark);
+}
+
+.prog-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.draft-alerts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.draft-alert-bubble {
+  background: #EFEAE2;
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.bubble-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-pill {
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.badge-req {
+  background: rgba(14, 165, 233, 0.15);
+  color: #0284C7;
+}
+
+.badge-rev {
+  background: rgba(239, 68, 68, 0.15);
+  color: #DC2626;
+}
+
+.badge-app {
+  background: rgba(16, 185, 129, 0.15);
+  color: #047857;
+}
+
+.d-title {
+  font-size: 13.5px;
+  color: var(--primary-dark);
+}
+
+.d-meta {
+  font-size: 12px;
+  line-height: 1.45;
+  color: #334155;
+  margin: 0;
+}
+
+.d-matter {
+  font-size: 11px;
+  color: #64748B;
+  font-style: italic;
+}
+
+.drafts-section-footer {
+  text-align: center;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}

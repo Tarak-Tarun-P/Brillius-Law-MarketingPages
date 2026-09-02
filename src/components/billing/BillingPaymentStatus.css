@@ -1,0 +1,227 @@
+.billing-status-section {
+  padding: 90px 0;
+  background: var(--white);
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+  border-bottom: 1px solid rgba(9, 21, 38, 0.06);
+  position: relative;
+}
+
+.status-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px auto;
+}
+
+.status-title {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+}
+
+.status-desc {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.status-pills-filter {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.status-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.status-filter-btn:hover {
+  background: var(--white);
+  border-color: var(--gold);
+}
+
+.status-filter-btn.active {
+  background: var(--primary-dark);
+  color: var(--white);
+  border-color: var(--primary-dark);
+}
+
+.status-dashboard-card {
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 16px 40px -8px rgba(9, 21, 38, 0.06);
+  overflow: hidden;
+}
+
+.dash-topbar {
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dash-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dash-heading {
+  font-size: 14.5px;
+  color: var(--white);
+}
+
+.dash-subtext {
+  font-size: 11px;
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+.dash-table-wrapper {
+  padding: 20px 24px;
+  overflow-x: auto;
+}
+
+.dash-table-head {
+  display: grid;
+  grid-template-columns: 24% 28% 16% 14% 14% 4%;
+  font-size: 10.5px;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(9, 21, 38, 0.08);
+}
+
+.dash-table-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-row {
+  display: grid;
+  grid-template-columns: 24% 28% 16% 14% 14% 4%;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(9, 21, 38, 0.05);
+}
+
+.dash-inv-client {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dash-inv-id {
+  font-size: 12.5px;
+  color: var(--primary-dark);
+  font-family: monospace;
+}
+
+.dash-client-name {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}
+
+.dash-matter-name {
+  font-size: 12px;
+  color: var(--primary-dark);
+}
+
+.dash-amount-val {
+  font-size: 13px;
+  color: var(--primary-dark);
+  font-family: monospace;
+}
+
+.status-tag-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  width: fit-content;
+  display: inline-block;
+}
+
+.st-paid {
+  background: rgba(16, 185, 129, 0.14);
+  color: #047857;
+}
+
+.st-partial {
+  background: rgba(245, 158, 11, 0.14);
+  color: #B45309;
+}
+
+.st-sent {
+  background: rgba(14, 165, 233, 0.14);
+  color: #0369A1;
+}
+
+.st-overdue {
+  background: rgba(239, 68, 68, 0.12);
+  color: #DC2626;
+}
+
+.st-draft {
+  background: rgba(9, 21, 38, 0.08);
+  color: var(--text-secondary);
+}
+
+.dash-due-str {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.btn-dash-action {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  background: var(--white);
+  border: 1px solid rgba(9, 21, 38, 0.06);
+}
+
+.dash-footer {
+  background: var(--white);
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 860px) {
+  .dash-table-head,
+  .dash-row {
+    min-width: 650px;
+  }
+}

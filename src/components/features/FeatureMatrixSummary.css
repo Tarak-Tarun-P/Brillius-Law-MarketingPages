@@ -1,0 +1,132 @@
+.matrix-summary-section {
+  position: relative;
+  padding: 80px 0 100px 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(247, 245, 239, 0.6) 100%);
+  z-index: 10;
+}
+
+.matrix-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 54px auto;
+}
+
+.matrix-eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.matrix-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.matrix-sub {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.matrix-card {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(9, 21, 38, 0.03);
+  transition: var(--transition-smooth);
+}
+
+.matrix-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(198, 161, 91, 0.5);
+  box-shadow: 0 12px 28px -4px rgba(9, 21, 38, 0.08);
+}
+
+.matrix-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(9, 21, 38, 0.06);
+  margin-bottom: 16px;
+}
+
+.matrix-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--bg-ivory);
+  border: 1px solid rgba(198, 161, 91, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.matrix-cat-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  letter-spacing: 0.04em;
+}
+
+.matrix-items-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.matrix-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}
+
+.matrix-check {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@media (max-width: 1200px) {
+  .matrix-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .matrix-title {
+    font-size: 30px;
+  }
+
+  .matrix-sub {
+    font-size: 15px;
+  }
+
+  .matrix-grid {
+    grid-template-columns: 1fr;
+  }
+}

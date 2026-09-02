@@ -1,0 +1,120 @@
+.casedrafts-export-section {
+  padding: 90px 0;
+  background: var(--white);
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+  border-bottom: 1px solid rgba(9, 21, 38, 0.06);
+  position: relative;
+}
+
+.export-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 52px auto;
+}
+
+.export-title {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+}
+
+.export-desc {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.export-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.export-item-card {
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.25s ease;
+}
+
+.export-item-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(198, 161, 91, 0.4);
+  box-shadow: 0 10px 24px -4px rgba(9, 21, 38, 0.08);
+}
+
+.export-item-card.primary-export-card {
+  border-color: rgba(198, 161, 91, 0.45);
+  box-shadow: 0 4px 18px rgba(198, 161, 91, 0.1);
+}
+
+.export-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(198, 161, 91, 0.15);
+  color: var(--gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-export-card .export-icon-box {
+  background: var(--primary-dark);
+  color: var(--gold-light);
+}
+
+.export-card-title {
+  font-size: 16px;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.export-card-sub {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+  flex: 1;
+}
+
+.btn-export-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 42px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  background: var(--white);
+  border: 1px solid rgba(9, 21, 38, 0.12);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.btn-export-action:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.btn-export-action.btn-primary-act {
+  background: var(--primary-dark);
+  color: var(--white);
+  border-color: var(--primary-dark);
+}
+
+.btn-export-action.btn-primary-act:hover {
+  background: var(--gold);
+  color: var(--primary-dark);
+  border-color: var(--gold);
+}

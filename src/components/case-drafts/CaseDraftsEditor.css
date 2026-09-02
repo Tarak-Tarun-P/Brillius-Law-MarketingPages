@@ -1,0 +1,199 @@
+.casedrafts-editor-section {
+  padding: 90px 0;
+  background: var(--bg-ivory);
+  position: relative;
+}
+
+.editor-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px auto;
+}
+
+.editor-title {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+}
+
+.editor-desc {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.casedrafts-editor-card {
+  background: var(--white);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 16px 40px -8px rgba(9, 21, 38, 0.06);
+  overflow: hidden;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.editor-toolbar {
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.toolbar-left-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.editor-doc-title {
+  font-size: 12px;
+  font-family: monospace;
+  color: var(--gold-light);
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.tool-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--white);
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.tool-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-editor-save {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  background: var(--gold);
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-editor-save:hover {
+  background: var(--gold-light);
+}
+
+.editor-clause-tabs {
+  display: flex;
+  background: var(--bg-ivory);
+  border-bottom: 1px solid rgba(9, 21, 38, 0.08);
+  padding: 0 16px;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.clause-tab {
+  padding: 12px 16px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.clause-tab:hover {
+  color: var(--primary-dark);
+}
+
+.clause-tab.active-tab {
+  color: var(--primary-dark);
+  border-bottom-color: var(--gold);
+}
+
+.editor-content-area {
+  padding: 28px;
+  background: #FCFBF8;
+  min-height: 240px;
+}
+
+.clause-edit-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.block-clause-title {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--primary-dark);
+  letter-spacing: 0.03em;
+}
+
+.editable-text-para {
+  font-family: var(--font-serif);
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--primary-dark);
+  margin: 0;
+  background: var(--white);
+  padding: 16px;
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 8px;
+  position: relative;
+}
+
+.para-badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  font-weight: 800;
+  background: rgba(198, 161, 91, 0.2);
+  color: var(--gold-dark);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.lawyer-annotation-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--gold-dark);
+  background: rgba(198, 161, 91, 0.1);
+  padding: 6px 12px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.editor-footer {
+  background: var(--white);
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}

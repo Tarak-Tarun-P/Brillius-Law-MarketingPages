@@ -1,0 +1,429 @@
+.features-hero-section {
+  position: relative;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  min-height: 870px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Background Gradients & Halos */
+.features-hero-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+.features-hero-bg-glow.glow-gold {
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 950px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(198, 161, 91, 0.08) 0%, rgba(198, 161, 91, 0.02) 55%, transparent 75%);
+  z-index: 1;
+}
+
+.features-hero-bg-glow.glow-navy {
+  top: 20%;
+  right: -5%;
+  width: 750px;
+  height: 750px;
+  background: radial-gradient(circle, rgba(23, 54, 93, 0.08) 0%, transparent 70%);
+  z-index: 1;
+}
+
+/* Background Architectural SVG Canvas */
+.features-hero-bg-architecture {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Content Container */
+.features-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Eyebrow (14px, 600) */
+.features-hero-eyebrow-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.features-hero-eyebrow {
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.features-hero-eyebrow-line {
+  display: inline-block;
+  width: 44px;
+  height: 1.5px;
+  background-color: var(--gold);
+  border-radius: 1px;
+}
+
+/* Main Headline (66px desktop, 700 weight, line-height 1.04) */
+.features-hero-headline {
+  font-size: 66px;
+  font-weight: 700;
+  line-height: 1.04;
+  color: var(--primary-dark);
+  letter-spacing: -0.025em;
+  margin: 0 0 24px 0;
+  max-width: 920px;
+}
+
+/* Description (20px, line-height 1.5, max-width 740px) */
+.features-hero-description {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  max-width: 740px;
+  margin: 0 auto 48px auto;
+}
+
+/* ------------------------------------------------------------- */
+/* LARGE PRODUCT ECOSYSTEM VISUAL (1080px wide x 350px high)     */
+/* ------------------------------------------------------------- */
+.features-ecosystem-wrapper {
+  width: 100%;
+  max-width: 1080px;
+  height: 350px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.ecosystem-halo-glow {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 750px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(198, 161, 91, 0.14) 0%, rgba(23, 54, 93, 0.06) 50%, transparent 75%);
+  filter: blur(35px);
+  pointer-events: none;
+}
+
+.ecosystem-vector-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ecosystem-nodes-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+/* Base Node Positioning */
+.eco-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+
+.eco-node:hover {
+  transform: translate(-50%, -54%) scale(1.06);
+}
+
+.node-circle {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(9, 21, 38, 0.08);
+  transition: all 0.35s ease;
+}
+
+/* ------------------------------------------------------------- */
+/* 1. PRIMARY CENTER NODE: LEGAL INTELLIGENCE (88px circle)      */
+/* ------------------------------------------------------------- */
+.node-center {
+  left: 50%;
+  top: 44%;
+}
+
+.center-circle {
+  width: 88px;
+  height: 88px;
+  background: var(--primary-dark);
+  border: 2.5px solid var(--gold);
+  box-shadow: 0 12px 32px rgba(9, 21, 38, 0.28), 0 0 0 8px rgba(198, 161, 91, 0.16);
+}
+
+.eco-node.node-center:hover .center-circle {
+  box-shadow: 0 16px 40px rgba(9, 21, 38, 0.38), 0 0 0 12px rgba(198, 161, 91, 0.26);
+  border-color: var(--gold-light);
+}
+
+.center-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-top: 12px;
+  letter-spacing: -0.01em;
+}
+
+.center-sub {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+/* ------------------------------------------------------------- */
+/* 2. SURROUNDING PRODUCT NODES (64px circles, 16px labels)      */
+/* ------------------------------------------------------------- */
+.standard-circle {
+  width: 64px;
+  height: 64px;
+  background: var(--white);
+  border: 1.5px solid rgba(9, 21, 38, 0.14);
+}
+
+.eco-node:hover .standard-circle {
+  border-color: var(--gold);
+  background: var(--bg-ivory);
+  box-shadow: 0 10px 24px rgba(198, 161, 91, 0.22);
+}
+
+.node-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-top: 10px;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+/* Node Coordinates in 1080px Canvas */
+/* Clients (Far Left-Lower) */
+.node-clients {
+  left: 7.4%;
+  top: 60%;
+}
+
+/* Documents (Left-Upper Wing) */
+.node-documents {
+  left: 17.6%;
+  top: 25%;
+}
+
+/* Cases (Upper Center-Left) */
+.node-cases {
+  left: 33.3%;
+  top: 14%;
+}
+
+/* Drafting (Upper Center-Right) */
+.node-drafting {
+  left: 66.7%;
+  top: 14%;
+}
+
+/* Research (Right-Upper Wing) */
+.node-research {
+  left: 82.4%;
+  top: 25%;
+}
+
+/* Evidence (Far Right-Lower) */
+.node-evidence {
+  left: 92.6%;
+  top: 60%;
+}
+
+/* Hearings (Lower Center-Left) */
+.node-hearings {
+  left: 28.7%;
+  top: 78%;
+}
+
+/* AI Assistant (Lower Center-Right) */
+.node-ai {
+  left: 71.3%;
+  top: 78%;
+}
+
+/* ------------------------------------------------------------- */
+/* Hero Bottom Wave Transition                                   */
+/* ------------------------------------------------------------- */
+.features-hero-bottom-transition {
+  width: 100%;
+  margin-top: 10px;
+  position: relative;
+  z-index: 10;
+  line-height: 0;
+}
+
+.transition-wave-svg {
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+/* ------------------------------------------------------------- */
+/* Responsive Rules                                              */
+/* ------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .features-hero-headline {
+    font-size: 56px;
+  }
+
+  .features-ecosystem-wrapper {
+    max-width: 960px;
+    height: 320px;
+  }
+
+  .center-circle {
+    width: 78px;
+    height: 78px;
+  }
+
+  .standard-circle {
+    width: 56px;
+    height: 56px;
+  }
+
+  .node-label {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 960px) {
+  .features-hero-section {
+    padding-top: 50px;
+    min-height: auto;
+  }
+
+  .features-hero-headline {
+    font-size: 44px;
+    margin-bottom: 20px;
+  }
+
+  .features-hero-description {
+    font-size: 18px;
+    margin-bottom: 36px;
+  }
+
+  .features-ecosystem-wrapper {
+    max-width: 720px;
+    height: 280px;
+  }
+
+  .center-circle {
+    width: 70px;
+    height: 70px;
+  }
+
+  .standard-circle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .center-label {
+    font-size: 15px;
+  }
+
+  .node-label {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 640px) {
+  .features-hero-section {
+    padding-top: 40px;
+  }
+
+  .features-hero-headline {
+    font-size: 36px;
+    line-height: 1.1;
+  }
+
+  .features-hero-description {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+
+  .features-ecosystem-wrapper {
+    height: auto;
+    min-height: 260px;
+  }
+
+  .ecosystem-vector-canvas {
+    display: none;
+  }
+
+  .ecosystem-nodes-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 14px;
+    padding: 14px 0;
+  }
+
+  .eco-node {
+    position: static;
+    transform: none;
+  }
+
+  .eco-node:hover {
+    transform: none;
+  }
+
+  .node-center {
+    grid-column: 1 / -1;
+    margin-bottom: 10px;
+  }
+
+  .standard-circle {
+    width: 54px;
+    height: 54px;
+  }
+
+  .node-label {
+    font-size: 14px;
+  }
+}

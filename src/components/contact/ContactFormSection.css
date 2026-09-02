@@ -1,0 +1,400 @@
+.contact-form-section {
+  position: relative;
+  padding: 10px 0 80px 0;
+  background: var(--bg-ivory);
+  z-index: 10;
+}
+
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* Common Eyebrow */
+.contact-card-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.contact-card-eyebrow.gold-eyebrow {
+  color: var(--gold-light);
+}
+
+/* ============================================================== */
+/* LEFT: Contact Form Card                                        */
+/* ============================================================== */
+.contact-form-card {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.form-card-header {
+  margin-bottom: 20px;
+}
+
+.form-card-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 8px;
+}
+
+.form-card-subtitle {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.contact-actual-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.required-star {
+  color: #DC2626;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  color: var(--primary-dark);
+  background-color: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.12);
+  border-radius: 9px;
+  padding: 10px 13px;
+  transition: var(--transition-smooth);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  background-color: var(--white);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(198, 161, 91, 0.18);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 84px;
+}
+
+.btn-contact-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 48px;
+  background: var(--primary-dark);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 700;
+  border: 1px solid var(--primary-dark);
+  border-radius: 9px;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: var(--transition-smooth);
+}
+
+.btn-contact-submit:hover:not(:disabled) {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(198, 161, 91, 0.3);
+}
+
+.btn-contact-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Success Banner */
+.form-success-banner {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(247, 245, 239, 0.6);
+  border: 1.5px solid var(--gold);
+  border-radius: 14px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.success-icon-circle {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px auto;
+  box-shadow: 0 4px 16px rgba(198, 161, 91, 0.2);
+}
+
+.success-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.success-text {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 420px;
+  margin: 0 auto 20px auto;
+}
+
+.btn-reset-form {
+  background: var(--primary-dark);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-reset-form:hover {
+  background: var(--gold);
+  color: var(--primary-dark);
+}
+
+/* ============================================================== */
+/* RIGHT: Contact Information & Legal Visual Panel                */
+/* ============================================================== */
+.contact-info-panel {
+  background: var(--primary-dark);
+  color: var(--white);
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 16px 36px -8px rgba(9, 21, 38, 0.25), 0 0 0 1px rgba(198, 161, 91, 0.2);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.panel-bg-svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.info-panel-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.info-panel-header {
+  margin-bottom: 20px;
+}
+
+.info-panel-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 8px;
+}
+
+.info-panel-desc {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #94A3B8;
+}
+
+.info-blocks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.info-block-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.info-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(198, 161, 91, 0.15);
+  border: 1px solid rgba(198, 161, 91, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-block-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.info-block-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+}
+
+.info-block-value {
+  font-size: 13.5px;
+  color: var(--white);
+  line-height: 1.45;
+}
+
+.info-block-value.link-gold {
+  color: var(--gold-light);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.info-block-value.link-gold:hover {
+  color: var(--white);
+}
+
+/* Supporting Legal Decorative Composition */
+.info-legal-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(198, 161, 91, 0.22);
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin-top: auto;
+}
+
+.info-legal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.info-legal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+.info-legal-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #94A3B8;
+}
+
+.info-legal-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 5px;
+}
+
+.info-legal-text {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #94A3B8;
+  margin-bottom: 12px;
+}
+
+.info-legal-badges-grid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.legal-mini-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 9px;
+  background: rgba(198, 161, 91, 0.12);
+  border: 1px solid rgba(198, 161, 91, 0.25);
+  border-radius: 6px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #E2E8F0;
+}
+
+/* ============================================================== */
+/* RESPONSIVE LAYOUT                                              */
+/* ============================================================== */
+@media (max-width: 960px) {
+  .contact-main-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-form-card,
+  .contact-info-panel {
+    padding: 24px 18px;
+  }
+
+  .form-card-title,
+  .info-panel-title {
+    font-size: 24px;
+  }
+}

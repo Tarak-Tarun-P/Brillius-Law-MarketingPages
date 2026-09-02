@@ -1,0 +1,240 @@
+.compare-history-section {
+  position: relative;
+  padding: 80px 0;
+  background: var(--bg-ivory);
+  z-index: 10;
+}
+
+.history-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 50px auto;
+}
+
+.history-eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.history-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+
+.history-desc {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.version-history-card {
+  max-width: 960px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  box-shadow: 0 16px 40px -8px rgba(9, 21, 38, 0.08);
+  overflow: hidden;
+}
+
+.history-card-topbar {
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.history-topbar-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.history-topbar-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--gold-light);
+  background: rgba(198, 161, 91, 0.2);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.version-timeline-list {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.version-timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-ivory);
+  border: 1px solid rgba(9, 21, 38, 0.06);
+  border-radius: 12px;
+  padding: 16px 20px;
+  transition: all 0.2s ease;
+}
+
+.version-timeline-item:hover {
+  border-color: rgba(198, 161, 91, 0.4);
+}
+
+.version-timeline-item.selected-version-row {
+  background: var(--white);
+  border-color: var(--gold);
+  box-shadow: 0 4px 14px rgba(198, 161, 91, 0.1);
+}
+
+.ver-icon-col {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(9, 21, 38, 0.08);
+}
+
+.ver-info-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ver-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ver-title-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.ver-current-pill {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #059669;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.ver-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}
+
+.ver-dot {
+  color: #CBD5E1;
+}
+
+.ver-changes-note {
+  color: var(--gold-dark);
+  font-weight: 600;
+}
+
+.ver-actions-col {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-select-ver {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(9, 21, 38, 0.12);
+  background: var(--white);
+  color: var(--primary-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-select-ver:hover {
+  border-color: var(--gold);
+}
+
+.btn-select-ver.active-baseline {
+  background: var(--primary-dark);
+  color: var(--white);
+  border-color: var(--primary-dark);
+}
+
+.btn-select-ver.active-target {
+  background: var(--gold);
+  color: var(--primary-dark);
+  border-color: var(--gold);
+}
+
+.history-card-footer {
+  background: var(--bg-ivory);
+  border-top: 1px solid rgba(9, 21, 38, 0.08);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.compare-status-prompt {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+.compare-status-prompt strong {
+  color: var(--primary-dark);
+}
+
+.btn-footer-compare {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: var(--primary-dark);
+  color: var(--white);
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  .version-timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .history-card-footer {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}

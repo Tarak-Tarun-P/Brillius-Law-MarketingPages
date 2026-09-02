@@ -1,0 +1,123 @@
+.solutions-final-cta-section {
+  position: relative;
+  padding: 40px 0 100px 0;
+  background: var(--bg-ivory);
+  z-index: 10;
+}
+
+.solutions-final-cta-box {
+  background: var(--primary-dark);
+  border-radius: 24px;
+  padding: 64px 48px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 20px 48px -12px rgba(9, 21, 38, 0.35), 0 0 0 1px rgba(198, 161, 91, 0.25);
+}
+
+.sol-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.sol-glow-gold {
+  top: -40px;
+  right: 10%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(198, 161, 91, 0.2) 0%, transparent 70%);
+}
+
+.sol-glow-blue {
+  bottom: -40px;
+  left: 10%;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(19, 43, 71, 0.6) 0%, transparent 70%);
+}
+
+.sol-final-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.sol-final-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(198, 161, 91, 0.15);
+  border: 1px solid rgba(198, 161, 91, 0.35);
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.sol-final-headline {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.sol-final-subtext {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #94A3B8;
+  margin-bottom: 36px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sol-final-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-sol-final-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 52px;
+  padding: 0 32px;
+  background-color: var(--gold);
+  color: var(--primary-dark);
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(198, 161, 91, 0.3);
+  transition: var(--transition-smooth);
+}
+
+.btn-sol-final-gold:hover {
+  background-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(198, 161, 91, 0.4);
+}
+
+@media (max-width: 768px) {
+  .solutions-final-cta-box {
+    padding: 48px 24px;
+  }
+
+  .sol-final-headline {
+    font-size: 32px;
+  }
+
+  .sol-final-subtext {
+    font-size: 15px;
+  }
+}

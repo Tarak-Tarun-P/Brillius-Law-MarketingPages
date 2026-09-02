@@ -1,0 +1,161 @@
+.court-coverage-section {
+  padding: 80px 0;
+  background: var(--bg-ivory);
+  position: relative;
+}
+
+.coverage-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px auto;
+}
+
+.coverage-title {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+}
+
+.coverage-desc {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.courts-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.court-card {
+  background: var(--white);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 14px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(9, 21, 38, 0.02);
+  transition: all 0.25s ease;
+}
+
+.court-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(198, 161, 91, 0.4);
+  box-shadow: 0 10px 24px -4px rgba(9, 21, 38, 0.08);
+}
+
+.court-card.apex-court-card {
+  background: linear-gradient(145deg, #091526 0%, #132B47 100%);
+  color: var(--white);
+  border-color: rgba(198, 161, 91, 0.4);
+  grid-column: span 2;
+}
+
+.court-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.court-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(198, 161, 91, 0.12);
+  color: var(--gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apex-court-card .court-icon-wrap {
+  background: rgba(198, 161, 91, 0.2);
+  color: var(--gold-light);
+}
+
+.court-tag-pill {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gold-dark);
+  background: rgba(198, 161, 91, 0.14);
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.apex-court-card .court-tag-pill {
+  background: var(--gold);
+  color: var(--primary-dark);
+}
+
+.court-name-h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.apex-court-card .court-name-h3 {
+  font-size: 18px;
+  color: var(--white);
+}
+
+.court-jur-text {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.apex-court-card .court-jur-text {
+  color: #94A3B8;
+}
+
+.court-status-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+}
+
+.apex-court-card .court-status-row {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.court-status-text {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.apex-court-card .court-status-text {
+  color: #E2E8F0;
+}
+
+.coverage-notice-banner {
+  background: rgba(198, 161, 91, 0.08);
+  border: 1px solid rgba(198, 161, 91, 0.25);
+  border-radius: 10px;
+  padding: 14px 20px;
+  text-align: center;
+}
+
+.coverage-notice-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .court-card.apex-court-card {
+    grid-column: span 1;
+  }
+}

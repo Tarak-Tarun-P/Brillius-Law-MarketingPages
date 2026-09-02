@@ -1,0 +1,139 @@
+.drafting-lifecycle-section {
+  position: relative;
+  padding: 80px 0;
+  background: var(--white);
+  z-index: 10;
+}
+
+.lifecycle-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 50px auto;
+}
+
+.lifecycle-eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.lifecycle-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+
+.lifecycle-desc {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.lifecycle-flow-grid {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-ivory);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 34px 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.lifecycle-card {
+  flex: 1;
+  background: var(--white);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 14px;
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.lifecycle-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(198, 161, 91, 0.5);
+  box-shadow: 0 10px 24px -4px rgba(9, 21, 38, 0.08);
+}
+
+.lifecycle-card.featured-lifecycle-card {
+  border-color: var(--gold);
+  box-shadow: 0 6px 20px rgba(198, 161, 91, 0.12);
+}
+
+.lifecycle-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.lifecycle-step-tag {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  font-family: monospace;
+}
+
+.lifecycle-icon-wrap {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--bg-ivory);
+  border: 1px solid rgba(198, 161, 91, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lifecycle-action-pill {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 6px;
+}
+
+.lifecycle-title-text {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin: 0 0 6px 0;
+}
+
+.lifecycle-desc-text {
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.lifecycle-arrow-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .lifecycle-flow-grid {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .lifecycle-arrow-col {
+    transform: rotate(90deg);
+  }
+}

@@ -1,0 +1,123 @@
+.research-audiences-section {
+  padding: 90px 0;
+  background: var(--bg-ivory);
+  position: relative;
+}
+
+.audiences-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 52px auto;
+}
+
+.audiences-title {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+}
+
+.audiences-desc {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.audiences-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.audience-card {
+  background: var(--white);
+  border: 1px solid rgba(9, 21, 38, 0.08);
+  border-radius: 18px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 4px 18px rgba(9, 21, 38, 0.03);
+  transition: all 0.25s ease;
+}
+
+.audience-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(198, 161, 91, 0.4);
+  box-shadow: 0 12px 28px -4px rgba(9, 21, 38, 0.08);
+}
+
+.audience-card.featured-audience-card {
+  border-color: rgba(198, 161, 91, 0.45);
+  box-shadow: 0 8px 24px -4px rgba(198, 161, 91, 0.12);
+}
+
+.audience-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.aud-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(198, 161, 91, 0.12);
+  color: var(--gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-audience-card .aud-icon-box {
+  background: var(--primary-dark);
+  color: var(--gold-light);
+}
+
+.aud-eyebrow-text {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.aud-headline {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.aud-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.aud-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(9, 21, 38, 0.06);
+}
+
+.aud-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--primary-dark);
+}
+
+.aud-point-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}

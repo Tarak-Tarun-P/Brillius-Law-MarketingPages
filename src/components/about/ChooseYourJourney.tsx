@@ -18,7 +18,7 @@ export const ChooseYourJourney: React.FC = () => {
       primaryCTA: 'Schedule a Firm Demo',
       primaryLink: '#get-started',
       secondaryCTA: 'View All Features',
-      secondaryLink: '#/features',
+      secondaryLink: '/features',
     },
     lawyer: {
       role: 'For Lawyers & Advocates',
@@ -32,7 +32,7 @@ export const ChooseYourJourney: React.FC = () => {
       primaryCTA: 'Start Free Lawyer Trial',
       primaryLink: '#get-started',
       secondaryCTA: 'Explore Drafting Lab',
-      secondaryLink: '#/features',
+      secondaryLink: '/features',
     },
     student: {
       role: 'For Law Students & Researchers',
@@ -47,7 +47,7 @@ export const ChooseYourJourney: React.FC = () => {
       primaryCTA: 'Explore Student Access',
       primaryLink: '#get-started',
       secondaryCTA: 'Browse Research Tools',
-      secondaryLink: '#/features',
+      secondaryLink: '/features',
     },
   };
 

@@ -27,7 +27,7 @@ export const ThreeMainSolutions: React.FC = () => {
         { label: 'Billing', icon: <IndianRupee size={12} /> },
       ],
       ctaText: 'Explore Firm Solutions',
-      ctaHref: '#/features#section-practice',
+      ctaHref: '/features#section-practice',
       featured: false,
     },
     {
@@ -53,7 +53,7 @@ export const ThreeMainSolutions: React.FC = () => {
         { label: 'AI Assistance', icon: <Bot size={12} /> },
       ],
       ctaText: 'Explore Professional Solutions',
-      ctaHref: '#/features#section-documents',
+      ctaHref: '/features#section-documents',
       featured: true,
     },
     {
@@ -81,7 +81,7 @@ export const ThreeMainSolutions: React.FC = () => {
         { label: 'Drafting', icon: <FileText size={12} /> },
       ],
       ctaText: 'Explore Student Solutions',
-      ctaHref: '#/features#section-library',
+      ctaHref: '/features#section-library',
       featured: false,
     },
   ];

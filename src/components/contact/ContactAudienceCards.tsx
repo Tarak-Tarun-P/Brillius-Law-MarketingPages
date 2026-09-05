@@ -17,7 +17,7 @@ export const ContactAudienceCards: React.FC = () => {
       featured: true,
       desc: 'Looking for a simpler way to manage your legal work?',
       cta: 'Learn More',
-      href: '#/features',
+      href: '/features',
     },
     {
       role: 'Law Students',

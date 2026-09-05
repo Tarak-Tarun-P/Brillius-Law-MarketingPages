@@ -25,8 +25,8 @@ import {
 import './Navbar.css';
 
 interface NavbarProps {
-  activePage?: 'home' | 'features' | 'solutions' | 'about' | 'contact';
-  onNavigate?: (page: 'home' | 'features' | 'solutions' | 'about' | 'contact') => void;
+  activePage?: 'home' | 'features' | 'solutions' | 'about' | 'contact' | 'partners' | 'support';
+  onNavigate?: (page: 'home' | 'features' | 'solutions' | 'about' | 'contact' | 'partners' | 'support') => void;
 }
 
 interface FeatureItem {
@@ -48,8 +48,11 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [featuresDropdownOpen, setFeaturesDropdownOpen] = useState(false);
   const [mobileFeaturesExpanded, setMobileFeaturesExpanded] = useState(false);
+  const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
+  const [mobileSolutionsExpanded, setMobileSolutionsExpanded] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const solutionsTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const featureCategories: FeatureCategory[] = [
     {
@@ -58,25 +61,25 @@ export const Navbar: React.FC<NavbarProps> = ({
         {
           name: 'Clients',
           desc: 'Manage your client information.',
-          href: '#/features/clients',
+          href: '/client-management',
           icon: <Users size={16} />,
         },
         {
           name: 'Cases',
           desc: 'Keep your cases organized.',
-          href: '#/features/cases',
+          href: '/cases',
           icon: <Briefcase size={16} />,
         },
         {
           name: 'Hearings',
           desc: 'Stay on top of important dates.',
-          href: '#/features/hearings',
+          href: '/hearings',
           icon: <Calendar size={16} />,
         },
         {
           name: 'Evidence',
           desc: 'Keep your evidence within reach.',
-          href: '#/features/evidence',
+          href: '/evidence',
           icon: <Archive size={16} />,
         },
       ],
@@ -87,25 +90,25 @@ export const Navbar: React.FC<NavbarProps> = ({
         {
           name: 'Documents',
           desc: 'Find your important documents easily.',
-          href: '#/features/documents',
+          href: '/document-storage',
           icon: <FileText size={16} />,
         },
         {
           name: 'Drafting Lab',
           desc: 'Create and refine legal documents.',
-          href: '#/features/drafting-lab',
+          href: '/drafting-lab',
           icon: <PenLine size={16} />,
         },
         {
           name: 'Case Drafts',
           desc: 'Keep your case drafts organized.',
-          href: '#/features/case-drafts',
+          href: '/case-drafts',
           icon: <FileCheck size={16} />,
         },
         {
           name: 'Compare & Review',
           desc: 'See exactly what changed.',
-          href: '#/features/compare-review',
+          href: '/compare-review',
           icon: <GitCompare size={16} />,
         },
       ],
@@ -116,19 +119,19 @@ export const Navbar: React.FC<NavbarProps> = ({
         {
           name: 'Law Library',
           desc: 'Explore Indian laws and judgments.',
-          href: '#/features/law-library',
+          href: '/law-library',
           icon: <BookOpen size={16} />,
         },
         {
           name: 'Legal Research',
           desc: 'Find useful legal information.',
-          href: '#/features/legal-research',
+          href: '/legal-research',
           icon: <Search size={16} />,
         },
         {
           name: 'My Journal',
           desc: 'Record notes and save important references.',
-          href: '#/features/my-journal',
+          href: '/my-journal',
           icon: <Mic size={16} />,
         },
       ],
@@ -139,13 +142,13 @@ export const Navbar: React.FC<NavbarProps> = ({
         {
           name: 'AI Assistant',
           desc: 'Get help with everyday legal work.',
-          href: '#/features/ai-assistant',
+          href: '/ai-assistant',
           icon: <Sparkles size={16} />,
         },
         {
           name: 'Document Analyzer',
           desc: 'Understand important info in documents.',
-          href: '#/features/document-analyzer',
+          href: '/document-analyzer',
           icon: <FileSearch size={16} />,
         },
       ],
@@ -156,32 +159,84 @@ export const Navbar: React.FC<NavbarProps> = ({
         {
           name: 'Billing & Invoicing',
           desc: 'Keep billing and invoices organized.',
-          href: '#/features/billing',
+          href: '/billing-invoicing',
           icon: <Receipt size={16} />,
         },
         {
           name: 'Firm Management',
           desc: 'Manage your team and workspace.',
-          href: '#/features/firm-management',
+          href: '/firm-management',
           icon: <Building2 size={16} />,
         },
         {
           name: 'eCourts Updates',
           desc: 'Keep track of relevant case updates.',
-          href: '#/features/ecourts-sync',
+          href: '/ecourts-sync',
           icon: <Landmark size={16} />,
         },
         {
           name: 'WhatsApp Alerts',
           desc: 'Stay informed about important updates.',
-          href: '#/features/whatsapp-alerts',
+          href: '/whatsapp-alerts',
           icon: <MessageSquare size={16} />,
         },
       ],
     },
   ];
 
-  // Close dropdown on click outside or Escape key
+  // Existing features organized by who they are most relevant to. Every
+  // entry links to its existing individual feature page — no new pages.
+  const solutionCategories: FeatureCategory[] = [
+    {
+      title: 'FIRMS',
+      items: [
+        { name: 'Client Management', desc: '', href: '/client-management', icon: <Users size={16} /> },
+        { name: 'Case Management', desc: '', href: '/cases', icon: <Briefcase size={16} /> },
+        { name: 'Hearings', desc: '', href: '/hearings', icon: <Calendar size={16} /> },
+        { name: 'Evidence', desc: '', href: '/evidence', icon: <Archive size={16} /> },
+        { name: 'Document Storage', desc: '', href: '/document-storage', icon: <FileText size={16} /> },
+        { name: 'Compare & Review', desc: '', href: '/compare-review', icon: <GitCompare size={16} /> },
+        { name: 'Drafting Lab', desc: '', href: '/drafting-lab', icon: <PenLine size={16} /> },
+        { name: 'Legal Research', desc: '', href: '/legal-research', icon: <Search size={16} /> },
+        { name: 'Firm Management', desc: '', href: '/firm-management', icon: <Building2 size={16} /> },
+        { name: 'Billing & Invoicing', desc: '', href: '/billing-invoicing', icon: <Receipt size={16} /> },
+        { name: 'eCourts Sync', desc: '', href: '/ecourts-sync', icon: <Landmark size={16} /> },
+        { name: 'WhatsApp Alerts', desc: '', href: '/whatsapp-alerts', icon: <MessageSquare size={16} /> },
+      ],
+    },
+    {
+      title: 'ADVOCATES / LAWYERS',
+      items: [
+        { name: 'Client Management', desc: '', href: '/client-management', icon: <Users size={16} /> },
+        { name: 'Case Management', desc: '', href: '/cases', icon: <Briefcase size={16} /> },
+        { name: 'Hearings', desc: '', href: '/hearings', icon: <Calendar size={16} /> },
+        { name: 'Evidence', desc: '', href: '/evidence', icon: <Archive size={16} /> },
+        { name: 'Document Storage', desc: '', href: '/document-storage', icon: <FileText size={16} /> },
+        { name: 'Drafting Lab', desc: '', href: '/drafting-lab', icon: <PenLine size={16} /> },
+        { name: 'Case Drafts', desc: '', href: '/case-drafts', icon: <FileCheck size={16} /> },
+        { name: 'Legal Research', desc: '', href: '/legal-research', icon: <Search size={16} /> },
+        { name: 'AI Assistant', desc: '', href: '/ai-assistant', icon: <Sparkles size={16} /> },
+        { name: 'Document Analyzer', desc: '', href: '/document-analyzer', icon: <FileSearch size={16} /> },
+        { name: 'eCourts Sync', desc: '', href: '/ecourts-sync', icon: <Landmark size={16} /> },
+        { name: 'WhatsApp Alerts', desc: '', href: '/whatsapp-alerts', icon: <MessageSquare size={16} /> },
+        { name: 'My Journal', desc: '', href: '/my-journal', icon: <Mic size={16} /> },
+      ],
+    },
+    {
+      title: 'STUDENTS',
+      items: [
+        { name: 'Law Library', desc: '', href: '/law-library', icon: <BookOpen size={16} /> },
+        { name: 'Legal Research', desc: '', href: '/legal-research', icon: <Search size={16} /> },
+        { name: 'AI Assistant', desc: '', href: '/ai-assistant', icon: <Sparkles size={16} /> },
+        { name: 'Document Analyzer', desc: '', href: '/document-analyzer', icon: <FileSearch size={16} /> },
+        { name: 'My Journal', desc: '', href: '/my-journal', icon: <Mic size={16} /> },
+        { name: 'Drafting Lab', desc: '', href: '/drafting-lab', icon: <PenLine size={16} /> },
+        { name: 'Compare & Review', desc: '', href: '/compare-review', icon: <GitCompare size={16} /> },
+      ],
+    },
+  ];
+
+  // Close dropdowns on click outside or Escape key
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -189,12 +244,14 @@ export const Navbar: React.FC<NavbarProps> = ({
         !dropdownRef.current.contains(event.target as Node)
       ) {
         setFeaturesDropdownOpen(false);
+        setSolutionsDropdownOpen(false);
       }
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         setFeaturesDropdownOpen(false);
+        setSolutionsDropdownOpen(false);
       }
     };
 
@@ -211,12 +268,27 @@ export const Navbar: React.FC<NavbarProps> = ({
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
+    setSolutionsDropdownOpen(false);
     setFeaturesDropdownOpen(true);
   };
 
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setFeaturesDropdownOpen(false);
+    }, 150);
+  };
+
+  const handleSolutionsMouseEnter = () => {
+    if (solutionsTimeoutRef.current) {
+      clearTimeout(solutionsTimeoutRef.current);
+    }
+    setFeaturesDropdownOpen(false);
+    setSolutionsDropdownOpen(true);
+  };
+
+  const handleSolutionsMouseLeave = () => {
+    solutionsTimeoutRef.current = setTimeout(() => {
+      setSolutionsDropdownOpen(false);
     }, 150);
   };
 
@@ -229,6 +301,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       onNavigate(id);
       setMobileMenuOpen(false);
       setFeaturesDropdownOpen(false);
+      setSolutionsDropdownOpen(false);
     }
   };
 
@@ -237,110 +310,82 @@ export const Navbar: React.FC<NavbarProps> = ({
     href: string
   ) => {
     setFeaturesDropdownOpen(false);
+    setSolutionsDropdownOpen(false);
     setMobileMenuOpen(false);
+    setMobileFeaturesExpanded(false);
+    setMobileSolutionsExpanded(false);
 
     if (onNavigate) {
       e.preventDefault();
-      if (href === '#/features/clients') {
+      if (href === '/client-management') {
         onNavigate('clients' as any);
-        window.location.hash = '/features/clients';
         return;
       }
-      if (href === '#/features/cases') {
+      if (href === '/cases') {
         onNavigate('cases' as any);
-        window.location.hash = '/features/cases';
         return;
       }
-      if (href === '#/features/hearings') {
+      if (href === '/hearings') {
         onNavigate('hearings' as any);
-        window.location.hash = '/features/hearings';
         return;
       }
-      if (href === '#/features/evidence') {
+      if (href === '/evidence') {
         onNavigate('evidence' as any);
-        window.location.hash = '/features/evidence';
         return;
       }
-      if (href === '#/features/compare-review') {
+      if (href === '/compare-review') {
         onNavigate('compare-review' as any);
-        window.location.hash = '/features/compare-review';
         return;
       }
-      if (href === '#/features/documents' || href === '#/features/document-storage') {
+      if (href === '/document-storage') {
         onNavigate('document-storage' as any);
-        window.location.hash = '/features/documents';
         return;
       }
-      if (href === '#/features/drafting-lab') {
+      if (href === '/drafting-lab') {
         onNavigate('drafting-lab' as any);
-        window.location.hash = '/features/drafting-lab';
         return;
       }
-      if (href === '#/features/case-drafts' || href === '#/features/drafts') {
+      if (href === '/case-drafts') {
         onNavigate('case-drafts' as any);
-        window.location.hash = '/features/case-drafts';
         return;
       }
-      if (href === '#/features/law-library') {
+      if (href === '/law-library') {
         onNavigate('law-library' as any);
-        window.location.hash = '/features/law-library';
         return;
       }
-      if (href === '#/features/my-journal') {
+      if (href === '/my-journal') {
         onNavigate('my-journal' as any);
-        window.location.hash = '/features/my-journal';
         return;
       }
-      if (href === '#/features/legal-research') {
+      if (href === '/legal-research') {
         onNavigate('legal-research' as any);
-        window.location.hash = '/features/legal-research';
         return;
       }
-      if (href === '#/features/firm-management') {
+      if (href === '/firm-management') {
         onNavigate('firm-management' as any);
-        window.location.hash = '/features/firm-management';
         return;
       }
-      if (href === '#/features/billing') {
+      if (href === '/billing-invoicing') {
         onNavigate('billing' as any);
-        window.location.hash = '/features/billing';
         return;
       }
-      if (href === '#/features/ecourts-sync' || href === '#/features/ecourts') {
+      if (href === '/ecourts-sync') {
         onNavigate('ecourts' as any);
-        window.location.hash = '/features/ecourts-sync';
         return;
       }
-      if (href === '#/features/whatsapp-alerts' || href === '#/features/whatsapp') {
+      if (href === '/whatsapp-alerts') {
         onNavigate('whatsapp-alerts' as any);
-        window.location.hash = '/features/whatsapp-alerts';
         return;
       }
-      if (href === '#/features/document-analyzer') {
+      if (href === '/document-analyzer') {
         onNavigate('document-analyzer' as any);
-        window.location.hash = '/features/document-analyzer';
         return;
       }
-      if (href === '#/features/ai-assistant') {
+      if (href === '/ai-assistant') {
         onNavigate('ai-assistant' as any);
-        window.location.hash = '/features/ai-assistant';
         return;
       }
       onNavigate('features');
-      const hashPart = href.includes('#') ? href.substring(href.indexOf('#')) : '';
-      if (hashPart) {
-        window.location.hash = hashPart.replace('#/', '/');
-        // Smooth scroll if element exists
-        const anchorId = hashPart.split('#')[2] || hashPart.split('#')[1];
-        if (anchorId) {
-          setTimeout(() => {
-            const el = document.getElementById(anchorId);
-            if (el) {
-              el.scrollIntoView({ behavior: 'smooth' });
-            }
-          }, 100);
-        }
-      }
     }
   };
 
@@ -350,7 +395,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Left: Logo */}
         <div className="navbar-logo-wrapper">
           <a
-            href="#/"
+            href="/"
             className="navbar-logo-link"
             aria-label="BrilliusLaw Home"
             onClick={(e) => handleLinkClick(e, 'home')}
@@ -375,7 +420,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             <div className="features-nav-btn-group">
               <a
-                href="#/features"
+                href="/features"
                 className={`navbar-link ${activePage === 'features' ? 'active-nav-item' : ''}`}
                 aria-current={activePage === 'features' ? 'page' : undefined}
                 onClick={(e) => handleLinkClick(e, 'features')}
@@ -390,6 +435,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className={`dropdown-chevron-btn ${featuresDropdownOpen ? 'rotate-chevron' : ''}`}
                 onClick={(e) => {
                   e.stopPropagation();
+                  setSolutionsDropdownOpen(false);
                   setFeaturesDropdownOpen(!featuresDropdownOpen);
                 }}
                 aria-expanded={featuresDropdownOpen}
@@ -412,7 +458,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     <h3 className="mega-title">Explore everything BrilliusLaw can help you do.</h3>
                   </div>
                   <a
-                    href="#/features"
+                    href="/features"
                     className="mega-view-all-link"
                     onClick={(e) => handleLinkClick(e, 'features')}
                   >
@@ -448,7 +494,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <div className="mega-dropdown-footer">
                   <span className="mega-footer-tag">All-in-one legal technology built for India.</span>
                   <a
-                    href="#/features"
+                    href="/features"
                     className="mega-footer-cta"
                     onClick={(e) => handleLinkClick(e, 'features')}
                   >
@@ -460,25 +506,101 @@ export const Navbar: React.FC<NavbarProps> = ({
             )}
           </li>
 
-          {/* 2. SOLUTIONS */}
-          <li className="navbar-item">
-            <a
-              href="#/solutions"
-              className={`navbar-link ${activePage === 'solutions' ? 'active-nav-item' : ''}`}
-              aria-current={activePage === 'solutions' ? 'page' : undefined}
-              onClick={(e) => handleLinkClick(e, 'solutions')}
-            >
-              Solutions
-              {activePage === 'solutions' && (
-                <span className="active-gold-indicator" aria-hidden="true" />
-              )}
-            </a>
+          {/* 2. SOLUTIONS (With Category Dropdown) */}
+          <li
+            className={`navbar-item dropdown-parent ${activePage === 'solutions' ? 'active-parent' : ''}`}
+            onMouseEnter={handleSolutionsMouseEnter}
+            onMouseLeave={handleSolutionsMouseLeave}
+          >
+            <div className="features-nav-btn-group">
+              <a
+                href="/solutions"
+                className={`navbar-link ${activePage === 'solutions' ? 'active-nav-item' : ''}`}
+                aria-current={activePage === 'solutions' ? 'page' : undefined}
+                onClick={(e) => handleLinkClick(e, 'solutions')}
+              >
+                Solutions
+                {activePage === 'solutions' && (
+                  <span className="active-gold-indicator" aria-hidden="true" />
+                )}
+              </a>
+              <button
+                type="button"
+                className={`dropdown-chevron-btn ${solutionsDropdownOpen ? 'rotate-chevron' : ''}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setFeaturesDropdownOpen(false);
+                  setSolutionsDropdownOpen(!solutionsDropdownOpen);
+                }}
+                aria-expanded={solutionsDropdownOpen}
+                aria-label="Toggle Solutions Menu"
+              >
+                <ChevronDown size={14} />
+              </button>
+            </div>
+
+            {/* Desktop Solutions Dropdown (reuses the Features mega-dropdown shell) */}
+            {solutionsDropdownOpen && (
+              <div
+                className="features-mega-dropdown solutions-mega-dropdown animate-fade-in"
+                role="region"
+                aria-label="Solutions by Role"
+              >
+                <div className="mega-dropdown-header">
+                  <div className="mega-header-text">
+                    <span className="mega-eyebrow">SOLUTIONS BY ROLE</span>
+                    <h3 className="mega-title">Find the right BrilliusLaw tools for how you work.</h3>
+                  </div>
+                  <a
+                    href="/solutions"
+                    className="mega-view-all-link"
+                    onClick={(e) => handleLinkClick(e, 'solutions')}
+                  >
+                    <span>View All Solutions</span>
+                    <ArrowRight size={14} aria-hidden="true" />
+                  </a>
+                </div>
+
+                <div className="mega-dropdown-columns solutions-dropdown-columns">
+                  {solutionCategories.map((cat, catIdx) => (
+                    <div key={catIdx} className="mega-category-column">
+                      <span className="mega-column-title">{cat.title}</span>
+                      <div className="solutions-items-list" role="list">
+                        {cat.items.map((item, itemIdx) => (
+                          <a
+                            key={itemIdx}
+                            href={item.href}
+                            className="solutions-feature-item"
+                            onClick={(e) => handleFeatureItemClick(e, item.href)}
+                          >
+                            <span className="solutions-item-icon">{item.icon}</span>
+                            <span className="solutions-item-name">{item.name}</span>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mega-dropdown-footer">
+                  <span className="mega-footer-tag">Solutions organized around how you actually practice.</span>
+                  <a
+                    href="/solutions"
+                    className="mega-footer-cta"
+                    onClick={(e) => handleLinkClick(e, 'solutions')}
+                  >
+                    <span>Explore Solutions Overview</span>
+                    <ArrowRight size={14} aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+            )}
           </li>
 
           {/* 3. ABOUT US */}
           <li className="navbar-item">
             <a
-              href="#/about"
+              href="/about"
               className={`navbar-link ${activePage === 'about' ? 'active-nav-item' : ''}`}
               aria-current={activePage === 'about' ? 'page' : undefined}
               onClick={(e) => handleLinkClick(e, 'about')}
@@ -493,7 +615,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* 4. CONTACT */}
           <li className="navbar-item">
             <a
-              href="#/contact"
+              href="/contact"
               className={`navbar-link ${activePage === 'contact' ? 'active-nav-item' : ''}`}
               aria-current={activePage === 'contact' ? 'page' : undefined}
               onClick={(e) => handleLinkClick(e, 'contact')}
@@ -535,7 +657,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <li className="navbar-mobile-item mobile-features-item">
               <div className="mobile-features-header">
                 <a
-                  href="#/features"
+                  href="/features"
                   className={`navbar-mobile-link ${activePage === 'features' ? 'active-mobile-item' : ''}`}
                   onClick={(e) => handleLinkClick(e, 'features')}
                 >
@@ -576,7 +698,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     </div>
                   ))}
                   <a
-                    href="#/features"
+                    href="/features"
                     className="mobile-view-all-features"
                     onClick={(e) => handleLinkClick(e, 'features')}
                   >
@@ -587,21 +709,66 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
             </li>
 
-            {/* Mobile Solutions */}
-            <li className="navbar-mobile-item">
-              <a
-                href="#/solutions"
-                className={`navbar-mobile-link ${activePage === 'solutions' ? 'active-mobile-item' : ''}`}
-                onClick={(e) => handleLinkClick(e, 'solutions')}
-              >
-                Solutions
-              </a>
+            {/* Mobile Solutions with Expandable Submenu */}
+            <li className="navbar-mobile-item mobile-features-item">
+              <div className="mobile-features-header">
+                <a
+                  href="/solutions"
+                  className={`navbar-mobile-link ${activePage === 'solutions' ? 'active-mobile-item' : ''}`}
+                  onClick={(e) => handleLinkClick(e, 'solutions')}
+                >
+                  Solutions
+                </a>
+                <button
+                  type="button"
+                  className="mobile-expand-btn"
+                  onClick={() => setMobileSolutionsExpanded(!mobileSolutionsExpanded)}
+                  aria-expanded={mobileSolutionsExpanded}
+                  aria-label="Expand Solutions List"
+                >
+                  <ChevronDown
+                    size={16}
+                    className={`mobile-chevron ${mobileSolutionsExpanded ? 'rotate-open' : ''}`}
+                  />
+                </button>
+              </div>
+
+              {mobileSolutionsExpanded && (
+                <div className="mobile-features-accordion animate-fade-in">
+                  {solutionCategories.map((cat, idx) => (
+                    <div key={idx} className="mobile-cat-group">
+                      <span className="mobile-cat-title">{cat.title}</span>
+                      <div className="mobile-cat-items">
+                        {cat.items.map((item, itemIdx) => (
+                          <a
+                            key={itemIdx}
+                            href={item.href}
+                            className="mobile-feature-sublink"
+                            onClick={(e) => handleFeatureItemClick(e, item.href)}
+                          >
+                            <span className="mobile-sublink-icon">{item.icon}</span>
+                            <span className="mobile-sublink-name">{item.name}</span>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                  <a
+                    href="/solutions"
+                    className="mobile-view-all-features"
+                    onClick={(e) => handleLinkClick(e, 'solutions')}
+                  >
+                    <span>View All Solutions</span>
+                    <ArrowRight size={14} />
+                  </a>
+                </div>
+              )}
             </li>
 
             {/* Mobile About Us */}
             <li className="navbar-mobile-item">
               <a
-                href="#/about"
+                href="/about"
                 className={`navbar-mobile-link ${activePage === 'about' ? 'active-mobile-item' : ''}`}
                 onClick={(e) => handleLinkClick(e, 'about')}
               >
@@ -612,7 +779,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Mobile Contact */}
             <li className="navbar-mobile-item">
               <a
-                href="#/contact"
+                href="/contact"
                 className={`navbar-mobile-link ${activePage === 'contact' ? 'active-mobile-item' : ''}`}
                 onClick={(e) => handleLinkClick(e, 'contact')}
               >

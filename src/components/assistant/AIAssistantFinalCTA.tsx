@@ -32,7 +32,7 @@ export const AIAssistantFinalCTA: React.FC = () => {
                 <span>Try AI Assistant</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>
-              <a href="#/features" className="btn-final-outline">
+              <a href="/features" className="btn-final-outline">
                 <span>Explore All Features</span>
                 <ArrowRight size={15} aria-hidden="true" />
               </a>

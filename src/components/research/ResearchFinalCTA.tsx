@@ -30,7 +30,7 @@ export const ResearchFinalCTA: React.FC = () => {
                 <ArrowRight size={16} />
               </a>
 
-              <a href="#/features" className="btn-cta-ghost">
+              <a href="/features" className="btn-cta-ghost">
                 <span>Explore All Features</span>
                 <Compass size={16} />
               </a>

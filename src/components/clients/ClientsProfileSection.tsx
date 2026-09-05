@@ -172,7 +172,7 @@ export const ClientsProfileSection: React.FC = () => {
             {/* 4. Related Cases Tab (Linked to Case Management) */}
             {activeTab === 'cases' && (
               <div className="related-cases-pane">
-                <a href="#/features/cases" className="case-row-card case-link-card" title="Open Case Details">
+                <a href="/cases" className="case-row-card case-link-card" title="Open Case Details">
                   <div className="case-row-left">
                     <div className="case-status-indicator indicator-green" />
                     <div>
@@ -189,7 +189,7 @@ export const ClientsProfileSection: React.FC = () => {
                   </div>
                 </a>
 
-                <a href="#/features/cases" className="case-row-card case-link-card" title="Open Case Details">
+                <a href="/cases" className="case-row-card case-link-card" title="Open Case Details">
                   <div className="case-row-left">
                     <div className="case-status-indicator indicator-gold" />
                     <div>
@@ -206,7 +206,7 @@ export const ClientsProfileSection: React.FC = () => {
                   </div>
                 </a>
 
-                <a href="#/features/cases" className="case-row-card case-link-card" title="Open Case Details">
+                <a href="/cases" className="case-row-card case-link-card" title="Open Case Details">
                   <div className="case-row-left">
                     <div className="case-status-indicator indicator-slate" />
                     <div>

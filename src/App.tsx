@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { LandingPage } from './pages/LandingPage';
@@ -23,8 +23,10 @@ import { WhatsAppAlertsPage } from './pages/WhatsAppAlertsPage';
 import { SolutionsPage } from './pages/SolutionsPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
+import { PartnersPage } from './pages/PartnersPage';
+import { SupportPage } from './pages/SupportPage';
 
-type PageRoute =
+export type PageRoute =
   | 'home'
   | 'features'
   | 'clients'
@@ -46,198 +48,115 @@ type PageRoute =
   | 'ai-assistant'
   | 'solutions'
   | 'about'
-  | 'contact';
+  | 'contact'
+  | 'partners'
+  | 'support';
+
+// Single source of truth mapping every page to its clean URL path.
+const ROUTE_PATHS: Record<PageRoute, string> = {
+  home: '/',
+  features: '/features',
+  clients: '/client-management',
+  cases: '/cases',
+  hearings: '/hearings',
+  evidence: '/evidence',
+  'compare-review': '/compare-review',
+  'drafting-lab': '/drafting-lab',
+  'case-drafts': '/case-drafts',
+  'document-storage': '/document-storage',
+  'law-library': '/law-library',
+  'my-journal': '/my-journal',
+  'legal-research': '/legal-research',
+  'firm-management': '/firm-management',
+  billing: '/billing-invoicing',
+  ecourts: '/ecourts-sync',
+  'whatsapp-alerts': '/whatsapp-alerts',
+  'document-analyzer': '/document-analyzer',
+  'ai-assistant': '/ai-assistant',
+  solutions: '/solutions',
+  about: '/about',
+  contact: '/contact',
+  partners: '/partners',
+  support: '/support',
+};
+
+const PATH_TO_ROUTE: Record<string, PageRoute> = Object.entries(ROUTE_PATHS).reduce(
+  (acc, [route, path]) => {
+    acc[path] = route as PageRoute;
+    return acc;
+  },
+  {} as Record<string, PageRoute>
+);
+
+const resolveRoute = (pathname: string): PageRoute => {
+  const normalized = pathname.length > 1 && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
+  return PATH_TO_ROUTE[normalized] || 'home';
+};
 
 export const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<PageRoute>('home');
+  const [currentPage, setCurrentPage] = useState<PageRoute>(() =>
+    resolveRoute(window.location.pathname)
+  );
 
-  // Detect route from URL hash or pathname on initial load and popstate
+  // Keep the rendered page in sync with browser Back / Forward navigation.
   useEffect(() => {
-    const handleRouteChange = () => {
-      const hash = window.location.hash;
-      const path = window.location.pathname;
+    const handlePopState = () => {
+      setCurrentPage(resolveRoute(window.location.pathname));
+    };
 
-      if (
-        hash.startsWith('#/features/document-storage') ||
-        path === '/features/document-storage' ||
-        hash === '#/features/document-storage' ||
-        hash.startsWith('#/features/documents') ||
-        path === '/features/documents' ||
-        hash === '#/features/documents'
-      ) {
-        setCurrentPage('document-storage');
-      } else if (
-        hash.startsWith('#/features/whatsapp-alerts') ||
-        path === '/features/whatsapp-alerts' ||
-        hash === '#/features/whatsapp-alerts' ||
-        hash.startsWith('#/features/whatsapp') ||
-        path === '/features/whatsapp'
-      ) {
-        setCurrentPage('whatsapp-alerts');
-      } else if (
-        hash.startsWith('#/features/case-drafts') ||
-        path === '/features/case-drafts' ||
-        hash === '#/features/case-drafts' ||
-        hash.startsWith('#/features/drafts') ||
-        path === '/features/drafts'
-      ) {
-        setCurrentPage('case-drafts');
-      } else if (
-        hash.startsWith('#/features/ecourts') ||
-        path === '/features/ecourts' ||
-        hash === '#/features/ecourts-sync' ||
-        path === '/features/ecourts-sync'
-      ) {
-        setCurrentPage('ecourts');
-      } else if (
-        hash.startsWith('#/features/billing') ||
-        path === '/features/billing' ||
-        hash === '#/features/billing'
-      ) {
-        setCurrentPage('billing');
-      } else if (
-        hash.startsWith('#/features/firm-management') ||
-        path === '/features/firm-management' ||
-        hash === '#/features/firm-management'
-      ) {
-        setCurrentPage('firm-management');
-      } else if (
-        hash.startsWith('#/features/legal-research') ||
-        path === '/features/legal-research' ||
-        hash === '#/features/legal-research'
-      ) {
-        setCurrentPage('legal-research');
-      } else if (
-        hash.startsWith('#/features/my-journal') ||
-        path === '/features/my-journal' ||
-        hash === '#/features/my-journal'
-      ) {
-        setCurrentPage('my-journal');
-      } else if (
-        hash.startsWith('#/features/law-library') ||
-        path === '/features/law-library' ||
-        hash === '#/features/law-library'
-      ) {
-        setCurrentPage('law-library');
-      } else if (
-        hash.startsWith('#/features/drafting-lab') ||
-        path === '/features/drafting-lab' ||
-        hash === '#/features/drafting-lab'
-      ) {
-        setCurrentPage('drafting-lab');
-      } else if (
-        hash.startsWith('#/features/compare-review') ||
-        path === '/features/compare-review' ||
-        hash === '#/features/compare-review'
-      ) {
-        setCurrentPage('compare-review');
-      } else if (
-        hash.startsWith('#/features/evidence') ||
-        path === '/features/evidence' ||
-        hash === '#/features/evidence'
-      ) {
-        setCurrentPage('evidence');
-      } else if (
-        hash.startsWith('#/features/hearings') ||
-        path === '/features/hearings' ||
-        hash === '#/features/hearings'
-      ) {
-        setCurrentPage('hearings');
-      } else if (
-        hash.startsWith('#/features/cases') ||
-        path === '/features/cases' ||
-        hash === '#/features/cases'
-      ) {
-        setCurrentPage('cases');
-      } else if (
-        hash.startsWith('#/features/clients') ||
-        path === '/features/clients' ||
-        hash === '#/features/clients'
-      ) {
-        setCurrentPage('clients');
-      } else if (
-        hash.startsWith('#/features/document-analyzer') ||
-        path === '/features/document-analyzer' ||
-        hash === '#/features/document-analyzer'
-      ) {
-        setCurrentPage('document-analyzer');
-      } else if (
-        hash.startsWith('#/features/ai-assistant') ||
-        path === '/features/ai-assistant' ||
-        hash === '#/features/ai-assistant'
-      ) {
-        setCurrentPage('ai-assistant');
-      } else if (hash.startsWith('#/features') || path === '/features') {
-        setCurrentPage('features');
-      } else if (hash.startsWith('#/solutions') || path === '/solutions') {
-        setCurrentPage('solutions');
-      } else if (hash.startsWith('#/about') || path === '/about' || hash === '#about') {
-        setCurrentPage('about');
-      } else if (hash.startsWith('#/contact') || path === '/contact' || hash === '#contact') {
-        setCurrentPage('contact');
-      } else {
-        setCurrentPage('home');
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Intercept clicks on same-origin internal links anywhere on the site so
+  // navigation always happens client-side via the History API, with no "#".
+  useEffect(() => {
+    const handleDocumentClick = (e: MouseEvent) => {
+      if (e.defaultPrevented || e.button !== 0) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+      const anchor = (e.target as HTMLElement)?.closest('a[href]') as HTMLAnchorElement | null;
+      if (!anchor || anchor.hasAttribute('download')) return;
+      if (anchor.target && anchor.target !== '_self') return;
+
+      const href = anchor.getAttribute('href') || '';
+      // Only intercept absolute internal paths (e.g. "/features"). Same-page
+      // anchors ("#get-started") and external/mailto/tel links pass through.
+      if (!href.startsWith('/') || href.startsWith('//')) return;
+
+      e.preventDefault();
+
+      const url = new URL(href, window.location.origin);
+      const samePath = url.pathname === window.location.pathname;
+
+      if (!samePath) {
+        window.history.pushState({}, '', url.pathname + url.search + url.hash);
+        setCurrentPage(resolveRoute(url.pathname));
+      } else if (url.hash !== window.location.hash) {
+        window.history.replaceState({}, '', url.pathname + url.search + url.hash);
+      }
+
+      if (url.hash) {
+        requestAnimationFrame(() => {
+          document.getElementById(url.hash.slice(1))?.scrollIntoView({ behavior: 'smooth' });
+        });
+      } else if (!samePath) {
+        window.scrollTo({ top: 0, behavior: 'instant' });
       }
     };
 
-    handleRouteChange();
-    window.addEventListener('hashchange', handleRouteChange);
-    window.addEventListener('popstate', handleRouteChange);
-
-    return () => {
-      window.removeEventListener('hashchange', handleRouteChange);
-      window.removeEventListener('popstate', handleRouteChange);
-    };
+    document.addEventListener('click', handleDocumentClick);
+    return () => document.removeEventListener('click', handleDocumentClick);
   }, []);
 
-  const handleNavigate = (page: PageRoute) => {
-    setCurrentPage(page);
-    if (page === 'document-storage') {
-      window.location.hash = '/features/documents';
-    } else if (page === 'whatsapp-alerts') {
-      window.location.hash = '/features/whatsapp-alerts';
-    } else if (page === 'case-drafts') {
-      window.location.hash = '/features/case-drafts';
-    } else if (page === 'ecourts') {
-      window.location.hash = '/features/ecourts-sync';
-    } else if (page === 'billing') {
-      window.location.hash = '/features/billing';
-    } else if (page === 'firm-management') {
-      window.location.hash = '/features/firm-management';
-    } else if (page === 'legal-research') {
-      window.location.hash = '/features/legal-research';
-    } else if (page === 'my-journal') {
-      window.location.hash = '/features/my-journal';
-    } else if (page === 'law-library') {
-      window.location.hash = '/features/law-library';
-    } else if (page === 'drafting-lab') {
-      window.location.hash = '/features/drafting-lab';
-    } else if (page === 'compare-review') {
-      window.location.hash = '/features/compare-review';
-    } else if (page === 'evidence') {
-      window.location.hash = '/features/evidence';
-    } else if (page === 'hearings') {
-      window.location.hash = '/features/hearings';
-    } else if (page === 'cases') {
-      window.location.hash = '/features/cases';
-    } else if (page === 'clients') {
-      window.location.hash = '/features/clients';
-    } else if (page === 'document-analyzer') {
-      window.location.hash = '/features/document-analyzer';
-    } else if (page === 'ai-assistant') {
-      window.location.hash = '/features/ai-assistant';
-    } else if (page === 'features') {
-      window.location.hash = '/features';
-    } else if (page === 'solutions') {
-      window.location.hash = '/solutions';
-    } else if (page === 'about') {
-      window.location.hash = '/about';
-    } else if (page === 'contact') {
-      window.location.hash = '/contact';
-    } else if (page === 'home') {
-      window.location.hash = '/';
+  const handleNavigate = useCallback((page: PageRoute) => {
+    const path = ROUTE_PATHS[page] ?? '/';
+    if (window.location.pathname !== path) {
+      window.history.pushState({}, '', path);
     }
-  };
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
 
   const renderCurrentPage = () => {
     switch (currentPage) {
@@ -283,6 +202,10 @@ export const App: React.FC = () => {
         return <AboutPage />;
       case 'contact':
         return <ContactPage />;
+      case 'partners':
+        return <PartnersPage />;
+      case 'support':
+        return <SupportPage />;
       default:
         return <LandingPage />;
     }
@@ -327,4 +250,3 @@ export const App: React.FC = () => {
 };
 
 export default App;
-

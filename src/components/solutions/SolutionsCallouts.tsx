@@ -52,7 +52,7 @@ export const SolutionsCallouts: React.FC = () => {
               </div>
             </div>
 
-            <a href="#/features#section-library" className="btn-callout-link">
+            <a href="/features#section-library" className="btn-callout-link">
               <span>Explore Law Library</span>
               <ArrowRight size={14} aria-hidden="true" />
             </a>
@@ -93,7 +93,7 @@ export const SolutionsCallouts: React.FC = () => {
               </div>
             </div>
 
-            <a href="#/features#section-journal" className="btn-callout-link">
+            <a href="/features#section-journal" className="btn-callout-link">
               <span>Explore My Journal</span>
               <ArrowRight size={14} aria-hidden="true" />
             </a>

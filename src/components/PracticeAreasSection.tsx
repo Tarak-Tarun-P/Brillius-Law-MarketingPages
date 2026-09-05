@@ -32,7 +32,7 @@ export const PracticeAreasSection: React.FC = () => {
         'Hearing and matter tracking',
         'Legal notice and document drafting',
       ],
-      ctaLink: '#/features/cases',
+      ctaLink: '/cases',
       ctaText: 'Explore Litigation Workflows',
     },
     {
@@ -49,7 +49,7 @@ export const PracticeAreasSection: React.FC = () => {
         'Document comparison',
         'Due-diligence support',
       ],
-      ctaLink: '#/features/compare-review',
+      ctaLink: '/compare-review',
       ctaText: 'Explore Corporate & M&A Tools',
     },
     {
@@ -66,7 +66,7 @@ export const PracticeAreasSection: React.FC = () => {
         'Notifications',
         'Tribunal developments',
       ],
-      ctaLink: '#/features/legal-research',
+      ctaLink: '/legal-research',
       ctaText: 'Explore Regulatory Workflows',
     },
     {
@@ -83,7 +83,7 @@ export const PracticeAreasSection: React.FC = () => {
         'Client matter tracking',
         'Case and document management',
       ],
-      ctaLink: '#/features/firm-management',
+      ctaLink: '/firm-management',
       ctaText: 'Explore Chambers Management',
     },
   ];

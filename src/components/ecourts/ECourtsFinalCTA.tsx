@@ -30,7 +30,7 @@ export const ECourtsFinalCTA: React.FC = () => {
                 <ArrowRight size={16} />
               </a>
 
-              <a href="#/contact" className="btn-cta-ghost">
+              <a href="/contact" className="btn-cta-ghost">
                 <span>Talk to Us</span>
                 <MessageSquare size={16} />
               </a>

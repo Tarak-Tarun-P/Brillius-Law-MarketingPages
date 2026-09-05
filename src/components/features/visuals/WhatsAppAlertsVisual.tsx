@@ -43,7 +43,7 @@ export const WhatsAppAlertsVisual: React.FC = () => {
       </div>
 
       <div className="vis-footer-row">
-        <a href="#/features/whatsapp-alerts" className="vis-link-btn">
+        <a href="/whatsapp-alerts" className="vis-link-btn">
           <span>Explore WhatsApp Alerts</span>
           <ArrowRight size={13} />
         </a>

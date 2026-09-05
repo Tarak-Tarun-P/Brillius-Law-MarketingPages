@@ -73,7 +73,7 @@ export const ClientsNotesAndCases: React.FC = () => {
             </p>
 
             <div className="nc-cases-demo">
-              <a href="#/features/cases" className="demo-case-item demo-case-link" title="Open Case in Case Management">
+              <a href="/cases" className="demo-case-item demo-case-link" title="Open Case in Case Management">
                 <div className="case-item-info">
                   <span className="case-item-name">Commercial Injunction Suit</span>
                   <span className="case-court-tag">Delhi High Court • Active</span>
@@ -84,7 +84,7 @@ export const ClientsNotesAndCases: React.FC = () => {
                 </div>
               </a>
 
-              <a href="#/features/cases" className="demo-case-item demo-case-link" title="Open Case in Case Management">
+              <a href="/cases" className="demo-case-item demo-case-link" title="Open Case in Case Management">
                 <div className="case-item-info">
                   <span className="case-item-name">NCLT Section 9 Company Defense</span>
                   <span className="case-court-tag">NCLT New Delhi Bench • Active</span>
@@ -95,7 +95,7 @@ export const ClientsNotesAndCases: React.FC = () => {
                 </div>
               </a>
 
-              <a href="#/features/cases" className="demo-case-item demo-case-link" title="Open Case in Case Management">
+              <a href="/cases" className="demo-case-item demo-case-link" title="Open Case in Case Management">
                 <div className="case-item-info">
                   <span className="case-item-name">Share Purchase Agreement Review</span>
                   <span className="case-court-tag">Corporate Advisory • Closed</span>

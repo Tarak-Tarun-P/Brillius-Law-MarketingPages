@@ -9,14 +9,14 @@ export const SolutionsAudienceCTA: React.FC = () => {
       desc: 'Connect partners, streamline client retainers, and manage team workloads.',
       icon: <Building2 size={24} color="#C6A15B" />,
       cta: 'Explore Firm Solution',
-      href: '#/features#section-practice',
+      href: '/features#section-practice',
     },
     {
       role: 'I\'m a Lawyer / Advocate',
       desc: 'Organize active matters, receive court updates, and draft with smart AI assistance.',
       icon: <Briefcase size={24} color="#091526" />,
       cta: 'Explore Advocate Solution',
-      href: '#/features#section-documents',
+      href: '/features#section-documents',
       featured: true,
     },
     {
@@ -24,7 +24,7 @@ export const SolutionsAudienceCTA: React.FC = () => {
       desc: 'Explore Bare Acts, study landmark judgments, and prepare winning moot briefs.',
       icon: <GraduationCap size={24} color="#C6A15B" />,
       cta: 'Explore Student Solution',
-      href: '#/features#section-library',
+      href: '/features#section-library',
     },
   ];
 

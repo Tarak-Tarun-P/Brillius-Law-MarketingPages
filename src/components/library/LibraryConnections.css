@@ -203,7 +203,7 @@
   gap: 2px;
 }
 
-.sub-tag {
+.sub-statute-node .sub-tag {
   font-size: 8.5px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -211,7 +211,7 @@
   text-transform: uppercase;
 }
 
-.sub-title {
+.sub-statute-node .sub-title {
   font-size: 12px;
   color: var(--primary-dark);
 }

@@ -167,7 +167,7 @@
   gap: 2px;
 }
 
-.sub-tag {
+.source-judgment-tag .sub-tag {
   font-size: 9px;
   font-weight: 800;
   color: var(--text-muted);

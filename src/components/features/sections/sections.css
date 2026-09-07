@@ -93,11 +93,11 @@
 }
 
 .sub-title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--primary-dark);
-  line-height: 1.15;
-  letter-spacing: -0.01em;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
   margin-bottom: 14px;
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import brilliusLogo from '../assets/BrilliusLaw - White-JPG.jpg';
 
 interface FooterProps {
   onNavigate?: (page: 'home' | 'features' | 'solutions' | 'about' | 'contact' | 'legal-research' | 'ai-assistant' | 'document-analyzer' | 'ecourts' | 'law-library' | 'my-journal' | 'partners' | 'support') => void;
@@ -24,11 +25,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="footer-brand">
             <a href="/" onClick={(e) => handleNav(e, 'home')}>
               <img
-                src="/assets/brilliuslaw-logo.png"
+                src={brilliusLogo}
                 alt="BrilliusLaw"
                 className="footer-logo"
-                width="135"
-                height="30"
+                width="155"
+                height="72"
               />
             </a>
             <p className="footer-tagline">

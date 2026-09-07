@@ -1,5 +1,5 @@
 .footer-section {
-  background-color: var(--primary-dark);
+  background-color: #000000;
   color: #E2E8F0;
   padding: 56px 0 28px 0;
   position: relative;
@@ -22,9 +22,12 @@
 }
 
 .footer-logo {
-  filter: brightness(0) invert(1);
+  display: block;
+  width: 155px;
+  max-width: 100%;
+  height: auto;
   margin-bottom: 14px;
-  opacity: 0.95;
+  object-fit: contain;
 }
 
 .footer-tagline {

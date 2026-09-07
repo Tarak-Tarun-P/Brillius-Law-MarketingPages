@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { Hero } from '../components/Hero';
-import { PracticeAreasSection } from '../components/PracticeAreasSection';
+import { LandingPageFeaturesOverview } from '../components/LandingPageFeaturesOverview';
 import { StudentOfferSection } from '../components/StudentOfferSection';
-import { FeatureSection } from '../components/FeatureSection';
 
 export const LandingPage: React.FC = () => {
   useEffect(() => {
@@ -15,14 +14,11 @@ export const LandingPage: React.FC = () => {
       {/* First Viewport: Hero with Lady Justice & Legal Intelligence Thesis */}
       <Hero />
 
-      {/* NEW SECTION 1: Solutions by Practice Area */}
-      <PracticeAreasSection />
+      {/* SECTION 1: Features Overview - Quick look at all features organized by category */}
+      <LandingPageFeaturesOverview />
 
-      {/* NEW SECTION 2: First 500 Law Students Promotional Section */}
+      {/* SECTION 2: First 500 Law Students Promotional Section */}
       <StudentOfferSection />
-
-      {/* Core Capabilities: 6 Enterprise Feature Cards */}
-      <FeatureSection />
     </main>
   );
 };

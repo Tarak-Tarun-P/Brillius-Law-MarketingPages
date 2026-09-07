@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { ArrowRight, ArrowDown, Search, Plus, Scale, CheckCircle2 } from 'lucide-react';
 import './CasesHero.css';

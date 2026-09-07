@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Scale, FileSpreadsheet, ShieldCheck, Landmark, Check, ArrowRight } from 'lucide-react';
 import './PracticeAreasSection.css';

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { CheckCircle, AlertTriangle, XCircle, Info, Sparkles } from 'lucide-react';
 import './ResearchTreatmentStatus.css';

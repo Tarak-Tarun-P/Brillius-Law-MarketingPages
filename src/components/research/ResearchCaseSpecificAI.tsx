@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { HelpCircle, FileText, Sparkles, CheckCircle2 } from 'lucide-react';
 import './ResearchCaseSpecificAI.css';

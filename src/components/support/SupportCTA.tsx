@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, LifeBuoy } from 'lucide-react';
 import './SupportCTA.css';
 
@@ -25,10 +26,10 @@ export const SupportCTA: React.FC = () => {
             </p>
 
             <div className="support-cta-actions">
-              <a href="/contact" className="btn-support-cta-gold">
+              <Link href="/contact" className="btn-support-cta-gold">
                 <span>Contact Support</span>
                 <ArrowRight size={16} aria-hidden="true" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

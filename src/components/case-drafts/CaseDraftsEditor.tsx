@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Edit3, CheckCircle2, Save, Undo2, Redo2, Bold, Italic, ListOrdered } from 'lucide-react';
 import './CaseDraftsEditor.css';

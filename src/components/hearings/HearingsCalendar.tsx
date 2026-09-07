@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Calendar as CalendarIcon, ChevronLeft, ChevronRight, Scale, Clock, Check } from 'lucide-react';
 import './HearingsCalendar.css';

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { BookOpen, Mic, ArrowRight } from 'lucide-react';
 import './SolutionsCallouts.css';
 
@@ -52,10 +53,10 @@ export const SolutionsCallouts: React.FC = () => {
               </div>
             </div>
 
-            <a href="/features#section-library" className="btn-callout-link">
+            <Link href="/features#section-library" className="btn-callout-link">
               <span>Explore Law Library</span>
               <ArrowRight size={14} aria-hidden="true" />
-            </a>
+            </Link>
           </div>
 
           {/* CALLOUT 2: MY JOURNAL */}
@@ -93,10 +94,10 @@ export const SolutionsCallouts: React.FC = () => {
               </div>
             </div>
 
-            <a href="/features#section-journal" className="btn-callout-link">
+            <Link href="/features#section-journal" className="btn-callout-link">
               <span>Explore My Journal</span>
               <ArrowRight size={14} aria-hidden="true" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

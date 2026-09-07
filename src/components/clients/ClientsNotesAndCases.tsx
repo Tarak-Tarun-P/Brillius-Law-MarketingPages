@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { FileText, Briefcase, ChevronRight } from 'lucide-react';
 import './ClientsNotesAndCases.css';
 
@@ -73,7 +74,7 @@ export const ClientsNotesAndCases: React.FC = () => {
             </p>
 
             <div className="nc-cases-demo">
-              <a href="/cases" className="demo-case-item demo-case-link" title="Open Case in Case Management">
+              <Link href="/cases" className="demo-case-item demo-case-link" title="Open Case in Case Management">
                 <div className="case-item-info">
                   <span className="case-item-name">Commercial Injunction Suit</span>
                   <span className="case-court-tag">Delhi High Court • Active</span>
@@ -82,9 +83,9 @@ export const ClientsNotesAndCases: React.FC = () => {
                   <span className="case-state-badge badge-active">In Progress</span>
                   <ChevronRight size={14} className="case-arrow-icon" />
                 </div>
-              </a>
+              </Link>
 
-              <a href="/cases" className="demo-case-item demo-case-link" title="Open Case in Case Management">
+              <Link href="/cases" className="demo-case-item demo-case-link" title="Open Case in Case Management">
                 <div className="case-item-info">
                   <span className="case-item-name">NCLT Section 9 Company Defense</span>
                   <span className="case-court-tag">NCLT New Delhi Bench • Active</span>
@@ -93,9 +94,9 @@ export const ClientsNotesAndCases: React.FC = () => {
                   <span className="case-state-badge badge-hearing">Hearing Scheduled</span>
                   <ChevronRight size={14} className="case-arrow-icon" />
                 </div>
-              </a>
+              </Link>
 
-              <a href="/cases" className="demo-case-item demo-case-link" title="Open Case in Case Management">
+              <Link href="/cases" className="demo-case-item demo-case-link" title="Open Case in Case Management">
                 <div className="case-item-info">
                   <span className="case-item-name">Share Purchase Agreement Review</span>
                   <span className="case-court-tag">Corporate Advisory • Closed</span>
@@ -104,7 +105,7 @@ export const ClientsNotesAndCases: React.FC = () => {
                   <span className="case-state-badge badge-closed">Completed</span>
                   <ChevronRight size={14} className="case-arrow-icon" />
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

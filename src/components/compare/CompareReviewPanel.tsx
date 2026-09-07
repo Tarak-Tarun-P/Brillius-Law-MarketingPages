@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Hash, Plus, Type, Table } from 'lucide-react';
 import './CompareReviewPanel.css';

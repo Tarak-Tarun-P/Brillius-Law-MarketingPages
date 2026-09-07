@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, MessageSquare, Landmark, FileText, Calendar } from 'lucide-react';
 import './ECourtsFinalCTA.css';
 
@@ -30,10 +31,10 @@ export const ECourtsFinalCTA: React.FC = () => {
                 <ArrowRight size={16} />
               </a>
 
-              <a href="/contact" className="btn-cta-ghost">
+              <Link href="/contact" className="btn-cta-ghost">
                 <span>Talk to Us</span>
                 <MessageSquare size={16} />
-              </a>
+              </Link>
             </div>
 
             {/* Bottom Assurance */}

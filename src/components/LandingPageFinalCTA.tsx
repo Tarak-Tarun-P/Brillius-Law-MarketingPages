@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Sparkles, ShieldCheck } from 'lucide-react';
 import './LandingPageFinalCTA.css';
 
@@ -31,9 +32,9 @@ export const LandingPageFinalCTA: React.FC = () => {
                 <ArrowRight size={16} className="btn-arrow-icon" aria-hidden="true" />
               </a>
 
-              <a href="/features" className="landing-btn-secondary">
+              <Link href="/features" className="landing-btn-secondary">
                 <span>Explore Features</span>
-              </a>
+              </Link>
             </div>
 
             <div className="landing-cta-trust-note">

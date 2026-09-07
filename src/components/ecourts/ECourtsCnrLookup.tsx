@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Search, CheckCircle2, Landmark, ArrowRight } from 'lucide-react';
 import './ECourtsCnrLookup.css';

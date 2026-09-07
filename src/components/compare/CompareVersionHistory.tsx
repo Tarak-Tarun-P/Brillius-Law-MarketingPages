@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { History, GitCompare, FileText, ArrowRight } from 'lucide-react';
 import './CompareVersionHistory.css';

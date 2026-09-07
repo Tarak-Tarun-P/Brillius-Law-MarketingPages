@@ -1,4 +1,7 @@
+'use client';
+
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Building2, User, FileText, ShieldCheck, Briefcase, MapPin, Mail, Phone, ChevronRight } from 'lucide-react';
 import './ClientsProfileSection.css';
 
@@ -172,7 +175,7 @@ export const ClientsProfileSection: React.FC = () => {
             {/* 4. Related Cases Tab (Linked to Case Management) */}
             {activeTab === 'cases' && (
               <div className="related-cases-pane">
-                <a href="/cases" className="case-row-card case-link-card" title="Open Case Details">
+                <Link href="/cases" className="case-row-card case-link-card" title="Open Case Details">
                   <div className="case-row-left">
                     <div className="case-status-indicator indicator-green" />
                     <div>
@@ -187,9 +190,9 @@ export const ClientsProfileSection: React.FC = () => {
                       <ChevronRight size={13} />
                     </span>
                   </div>
-                </a>
+                </Link>
 
-                <a href="/cases" className="case-row-card case-link-card" title="Open Case Details">
+                <Link href="/cases" className="case-row-card case-link-card" title="Open Case Details">
                   <div className="case-row-left">
                     <div className="case-status-indicator indicator-gold" />
                     <div>
@@ -204,9 +207,9 @@ export const ClientsProfileSection: React.FC = () => {
                       <ChevronRight size={13} />
                     </span>
                   </div>
-                </a>
+                </Link>
 
-                <a href="/cases" className="case-row-card case-link-card" title="Open Case Details">
+                <Link href="/cases" className="case-row-card case-link-card" title="Open Case Details">
                   <div className="case-row-left">
                     <div className="case-status-indicator indicator-slate" />
                     <div>
@@ -221,7 +224,7 @@ export const ClientsProfileSection: React.FC = () => {
                       <ChevronRight size={13} />
                     </span>
                   </div>
-                </a>
+                </Link>
               </div>
             )}
           </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { MessageSquare, Calendar, CheckSquare, FileCheck2, ArrowRight } from 'lucide-react';
 import './visuals.css';
 
@@ -43,10 +44,10 @@ export const WhatsAppAlertsVisual: React.FC = () => {
       </div>
 
       <div className="vis-footer-row">
-        <a href="/whatsapp-alerts" className="vis-link-btn">
+        <Link href="/whatsapp-alerts" className="vis-link-btn">
           <span>Explore WhatsApp Alerts</span>
           <ArrowRight size={13} />
-        </a>
+        </Link>
       </div>
     </div>
   );

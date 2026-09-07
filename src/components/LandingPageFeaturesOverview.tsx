@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import {
   Briefcase,
   FileCheck2,
@@ -160,10 +161,10 @@ export const LandingPageFeaturesOverview: React.FC = () => {
 
         {/* View All Features CTA */}
         <div className="features-overview-cta-wrapper">
-          <a href="/features" className="features-overview-cta">
+          <Link href="/features" className="features-overview-cta">
             <span>View All Features</span>
             <ArrowRight size={16} aria-hidden="true" className="cta-arrow" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

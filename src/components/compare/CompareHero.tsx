@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { ArrowRight, ArrowDown, GitCompare, CheckCircle2 } from 'lucide-react';
 import './CompareHero.css';

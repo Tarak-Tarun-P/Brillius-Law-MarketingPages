@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import './AIAssistantFinalCTA.css';
 
@@ -32,10 +33,10 @@ export const AIAssistantFinalCTA: React.FC = () => {
                 <span>Try AI Assistant</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>
-              <a href="/features" className="btn-final-outline">
+              <Link href="/features" className="btn-final-outline">
                 <span>Explore All Features</span>
                 <ArrowRight size={15} aria-hidden="true" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

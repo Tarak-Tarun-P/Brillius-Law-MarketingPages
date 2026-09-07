@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Highlighter, FileText, CheckCircle2 } from 'lucide-react';
 import './ResearchRelevantPassages.css';

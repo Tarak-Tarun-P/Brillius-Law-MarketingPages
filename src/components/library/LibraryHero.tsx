@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { ArrowRight, ArrowDown, Search, Scale, CheckCircle2, Bookmark } from 'lucide-react';
 import './LibraryHero.css';

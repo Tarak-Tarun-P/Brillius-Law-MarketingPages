@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, MessageSquare, Shield, Users, Lock } from 'lucide-react';
 import './FirmFinalCTA.css';
 
@@ -30,10 +31,10 @@ export const FirmFinalCTA: React.FC = () => {
                 <ArrowRight size={16} />
               </a>
 
-              <a href="/contact" className="btn-cta-ghost">
+              <Link href="/contact" className="btn-cta-ghost">
                 <span>Talk to Us</span>
                 <MessageSquare size={16} />
-              </a>
+              </Link>
             </div>
 
             {/* Bottom Assurance */}

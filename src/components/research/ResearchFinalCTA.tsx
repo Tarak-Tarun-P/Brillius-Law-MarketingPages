@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Compass, Shield } from 'lucide-react';
 import './ResearchFinalCTA.css';
 
@@ -30,10 +31,10 @@ export const ResearchFinalCTA: React.FC = () => {
                 <ArrowRight size={16} />
               </a>
 
-              <a href="/features" className="btn-cta-ghost">
+              <Link href="/features" className="btn-cta-ghost">
                 <span>Explore All Features</span>
                 <Compass size={16} />
-              </a>
+              </Link>
             </div>
 
             {/* Bottom Assurance */}

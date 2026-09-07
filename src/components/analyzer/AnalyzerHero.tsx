@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { ArrowRight, FileText, CheckCircle2, Search, ArrowDown } from 'lucide-react';
 import './AnalyzerHero.css';

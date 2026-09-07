@@ -1,37 +1,23 @@
 import React from 'react';
+import Link from 'next/link';
 import './Footer.css';
-import brilliusLogo from '../assets/BrilliusLaw - White-JPG.jpg';
 
-interface FooterProps {
-  onNavigate?: (page: 'home' | 'features' | 'solutions' | 'about' | 'contact' | 'legal-research' | 'ai-assistant' | 'document-analyzer' | 'ecourts' | 'law-library' | 'my-journal' | 'partners' | 'support') => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
-  const handleNav = (
-    e: React.MouseEvent,
-    page: 'home' | 'features' | 'solutions' | 'about' | 'contact' | 'legal-research' | 'ai-assistant' | 'document-analyzer' | 'ecourts' | 'law-library' | 'my-journal' | 'partners' | 'support'
-  ) => {
-    if (onNavigate) {
-      e.preventDefault();
-      onNavigate(page);
-    }
-  };
-
+export const Footer: React.FC = () => {
   return (
     <footer className="footer-section" role="contentinfo">
       <div className="content-container">
         <div className="footer-inner">
           {/* Left Brand Area */}
           <div className="footer-brand">
-            <a href="/" onClick={(e) => handleNav(e, 'home')}>
+            <Link href="/">
               <img
-                src={brilliusLogo}
+                src="/assets/BrilliusLaw%20-%20White-JPG.jpg"
                 alt="BrilliusLaw"
                 className="footer-logo"
                 width="155"
                 height="72"
               />
-            </a>
+            </Link>
             <p className="footer-tagline">
               Modern Legal Intelligence. Built for Indian Jurisprudence &amp; Enterprise Law.
             </p>
@@ -42,52 +28,28 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             {/* 1. PRODUCT */}
             <div className="footer-links-col">
               <span className="footer-col-title">Product</span>
-              <a href="/features" onClick={(e) => handleNav(e, 'features')}>
-                Features
-              </a>
-              <a href="/solutions" onClick={(e) => handleNav(e, 'solutions')}>
-                Solutions
-              </a>
-              <a href="/legal-research" onClick={(e) => handleNav(e, 'legal-research')}>
-                Legal Research
-              </a>
-              <a href="/ai-assistant" onClick={(e) => handleNav(e, 'ai-assistant')}>
-                AI Assistant
-              </a>
-              <a href="/document-analyzer" onClick={(e) => handleNav(e, 'document-analyzer')}>
-                Document Analyzer
-              </a>
-              <a href="/ecourts-sync" onClick={(e) => handleNav(e, 'ecourts')}>
-                eCourts Sync
-              </a>
+              <Link href="/features">Features</Link>
+              <Link href="/solutions">Solutions</Link>
+              <Link href="/legal-research">Legal Research</Link>
+              <Link href="/ai-assistant">AI Assistant</Link>
+              <Link href="/document-analyzer">Document Analyzer</Link>
+              <Link href="/ecourts-sync">eCourts Sync</Link>
             </div>
 
             {/* 2. COMPANY */}
             <div className="footer-links-col">
               <span className="footer-col-title">Company</span>
-              <a href="/about" onClick={(e) => handleNav(e, 'about')}>
-                About Us
-              </a>
-              <a href="/partners" onClick={(e) => handleNav(e, 'partners')}>
-                Partners
-              </a>
-              <a href="/contact" onClick={(e) => handleNav(e, 'contact')}>
-                Contact
-              </a>
+              <Link href="/about">About Us</Link>
+              <Link href="/partners">Partners</Link>
+              <Link href="/contact">Contact</Link>
             </div>
 
             {/* 3. RESOURCES */}
             <div className="footer-links-col">
               <span className="footer-col-title">Resources</span>
-              <a href="/law-library" onClick={(e) => handleNav(e, 'law-library')}>
-                Law Library
-              </a>
-              <a href="/my-journal" onClick={(e) => handleNav(e, 'my-journal')}>
-                My Journal
-              </a>
-              <a href="/support" onClick={(e) => handleNav(e, 'support')}>
-                Support
-              </a>
+              <Link href="/law-library">Law Library</Link>
+              <Link href="/my-journal">My Journal</Link>
+              <Link href="/support">Support</Link>
             </div>
 
             {/* 4. LEGAL & SECURITY */}
@@ -106,11 +68,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             © {new Date().getFullYear()} BrilliusLaw Technologies Pvt. Ltd. All rights reserved.
           </p>
           <p className="footer-heritage">
-            Honouring India's Constitutional Heritage with Modern Legal Technology.
+            Honouring India&apos;s Constitutional Heritage with Modern Legal Technology.
           </p>
         </div>
       </div>
     </footer>
   );
 };
-

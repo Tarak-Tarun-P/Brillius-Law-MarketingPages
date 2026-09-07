@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { GraduationCap, ArrowRight, BookOpen, Search, FileText, Sparkles, CheckCircle2 } from 'lucide-react';
 import './StudentOfferSection.css';
 
@@ -82,9 +83,9 @@ export const StudentOfferSection: React.FC = () => {
                   <span>Register Now</span>
                   <ArrowRight size={16} aria-hidden="true" />
                 </a>
-                <a href="/solutions" className="btn-student-secondary">
+                <Link href="/solutions" className="btn-student-secondary">
                   <span>Learn More</span>
-                </a>
+                </Link>
               </div>
 
               {/* Supporting Eligibility Line */}

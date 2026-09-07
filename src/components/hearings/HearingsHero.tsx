@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { ArrowRight, ArrowDown, Calendar, Scale, Check, ChevronRight, CheckCircle2 } from 'lucide-react';
 import './HearingsHero.css';

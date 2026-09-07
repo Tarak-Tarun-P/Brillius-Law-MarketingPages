@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { ArrowRight, ArrowDown, Bold, Italic, Underline, AlignLeft, AlignCenter, AlignRight, Highlighter, Palette, MessageSquare, CheckCircle2 } from 'lucide-react';
 import './DraftingHero.css';

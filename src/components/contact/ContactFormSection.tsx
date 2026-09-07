@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Mail, MapPin, MessageSquare, ArrowRight, CheckCircle2, Clock, ShieldCheck, Scale, FileText } from 'lucide-react';
 import './ContactFormSection.css';

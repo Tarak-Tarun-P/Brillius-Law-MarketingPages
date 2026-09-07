@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Archive } from 'lucide-react';
 import './EvidenceFinalCTA.css';
 
@@ -30,10 +31,10 @@ export const EvidenceFinalCTA: React.FC = () => {
                 <span>Explore Evidence</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>
-              <a href="/features" className="btn-final-outline">
+              <Link href="/features" className="btn-final-outline">
                 <span>Explore All Features</span>
                 <ArrowRight size={15} aria-hidden="true" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

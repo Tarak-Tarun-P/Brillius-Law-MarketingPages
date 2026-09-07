@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Scale, Calendar, Clock, User, FileText } from 'lucide-react';
 import './CasesDetailVisual.css';

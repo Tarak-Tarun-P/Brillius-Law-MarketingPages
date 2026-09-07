@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { ArrowRight, ArrowDown, Archive, FileText, CheckCircle2, Eye, FolderPlus } from 'lucide-react';
 import './EvidenceHero.css';

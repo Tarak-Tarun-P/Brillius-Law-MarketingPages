@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Search, FileText, Download, Eye, CheckCircle2 } from 'lucide-react';
 import './DocStorageSearch.css';

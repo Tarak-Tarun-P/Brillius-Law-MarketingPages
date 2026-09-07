@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Handshake } from 'lucide-react';
 import './PartnersCTA.css';
 
@@ -27,14 +28,14 @@ export const PartnersCTA: React.FC = () => {
             </p>
 
             <div className="partners-cta-actions">
-              <a href="/contact" className="btn-partners-cta-gold">
+              <Link href="/contact" className="btn-partners-cta-gold">
                 <span>Become a Partner</span>
                 <ArrowRight size={16} aria-hidden="true" />
-              </a>
-              <a href="/contact" className="btn-partners-cta-outline">
+              </Link>
+              <Link href="/contact" className="btn-partners-cta-outline">
                 <span>Talk to Us</span>
                 <ArrowRight size={15} aria-hidden="true" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

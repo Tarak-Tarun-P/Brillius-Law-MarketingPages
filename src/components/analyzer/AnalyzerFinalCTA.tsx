@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import './AnalyzerFinalCTA.css';
 
@@ -30,10 +31,10 @@ export const AnalyzerFinalCTA: React.FC = () => {
                 <span>Try Document Analyzer</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>
-              <a href="/features" className="btn-final-outline">
+              <Link href="/features" className="btn-final-outline">
                 <span>Explore All Features</span>
                 <ArrowRight size={15} aria-hidden="true" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

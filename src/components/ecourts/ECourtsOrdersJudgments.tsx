@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { FileText, Download, Bookmark, CheckCircle2 } from 'lucide-react';
 import './ECourtsOrdersJudgments.css';

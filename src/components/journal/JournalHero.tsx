@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { ArrowRight, ArrowDown, Mic, Bookmark, CheckCircle2, Search, PlusCircle, Clock } from 'lucide-react';
 import './JournalHero.css';

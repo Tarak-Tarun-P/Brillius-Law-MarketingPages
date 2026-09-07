@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Building2, Briefcase, GraduationCap, ArrowRight, CheckCircle2 } from 'lucide-react';
 import './ChooseYourJourney.css';

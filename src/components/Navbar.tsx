@@ -1,4 +1,8 @@
+'use client';
+
 import React, { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import {
   Menu,
   X,
@@ -24,11 +28,6 @@ import {
 } from 'lucide-react';
 import './Navbar.css';
 
-interface NavbarProps {
-  activePage?: 'home' | 'features' | 'solutions' | 'about' | 'contact' | 'partners' | 'support';
-  onNavigate?: (page: 'home' | 'features' | 'solutions' | 'about' | 'contact' | 'partners' | 'support') => void;
-}
-
 interface FeatureItem {
   name: string;
   desc: string;
@@ -41,10 +40,30 @@ interface FeatureCategory {
   items: FeatureItem[];
 }
 
-export const Navbar: React.FC<NavbarProps> = ({
-  activePage = 'home',
-  onNavigate,
-}) => {
+const FEATURE_PATHS = [
+  '/features', '/client-management', '/cases', '/hearings', '/evidence',
+  '/compare-review', '/drafting-lab', '/case-drafts', '/document-storage',
+  '/law-library', '/my-journal', '/legal-research', '/firm-management',
+  '/billing-invoicing', '/ecourts-sync', '/whatsapp-alerts',
+  '/document-analyzer', '/ai-assistant',
+];
+
+export const Navbar: React.FC = () => {
+  const pathname = usePathname();
+  const activePage = FEATURE_PATHS.includes(pathname)
+    ? 'features'
+    : pathname === '/solutions'
+    ? 'solutions'
+    : pathname === '/about'
+    ? 'about'
+    : pathname === '/contact'
+    ? 'contact'
+    : pathname === '/partners'
+    ? 'partners'
+    : pathname === '/support'
+    ? 'support'
+    : 'home';
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [featuresDropdownOpen, setFeaturesDropdownOpen] = useState(false);
   const [mobileFeaturesExpanded, setMobileFeaturesExpanded] = useState(false);
@@ -294,101 +313,18 @@ export const Navbar: React.FC<NavbarProps> = ({
     }, 150);
   };
 
-  const handleLinkClick = (
-    e: React.MouseEvent,
-    id: 'home' | 'features' | 'solutions' | 'about' | 'contact'
-  ) => {
-    if (onNavigate) {
-      e.preventDefault();
-      onNavigate(id);
-      setMobileMenuOpen(false);
-      setFeaturesDropdownOpen(false);
-      setSolutionsDropdownOpen(false);
-    }
+  const handleLinkClick = () => {
+    setMobileMenuOpen(false);
+    setFeaturesDropdownOpen(false);
+    setSolutionsDropdownOpen(false);
   };
 
-  const handleFeatureItemClick = (
-    e: React.MouseEvent,
-    href: string
-  ) => {
+  const handleFeatureItemClick = () => {
     setFeaturesDropdownOpen(false);
     setSolutionsDropdownOpen(false);
     setMobileMenuOpen(false);
     setMobileFeaturesExpanded(false);
     setMobileSolutionsExpanded(false);
-
-    if (onNavigate) {
-      e.preventDefault();
-      if (href === '/client-management') {
-        onNavigate('clients' as any);
-        return;
-      }
-      if (href === '/cases') {
-        onNavigate('cases' as any);
-        return;
-      }
-      if (href === '/hearings') {
-        onNavigate('hearings' as any);
-        return;
-      }
-      if (href === '/evidence') {
-        onNavigate('evidence' as any);
-        return;
-      }
-      if (href === '/compare-review') {
-        onNavigate('compare-review' as any);
-        return;
-      }
-      if (href === '/document-storage') {
-        onNavigate('document-storage' as any);
-        return;
-      }
-      if (href === '/drafting-lab') {
-        onNavigate('drafting-lab' as any);
-        return;
-      }
-      if (href === '/case-drafts') {
-        onNavigate('case-drafts' as any);
-        return;
-      }
-      if (href === '/law-library') {
-        onNavigate('law-library' as any);
-        return;
-      }
-      if (href === '/my-journal') {
-        onNavigate('my-journal' as any);
-        return;
-      }
-      if (href === '/legal-research') {
-        onNavigate('legal-research' as any);
-        return;
-      }
-      if (href === '/firm-management') {
-        onNavigate('firm-management' as any);
-        return;
-      }
-      if (href === '/billing-invoicing') {
-        onNavigate('billing' as any);
-        return;
-      }
-      if (href === '/ecourts-sync') {
-        onNavigate('ecourts' as any);
-        return;
-      }
-      if (href === '/whatsapp-alerts') {
-        onNavigate('whatsapp-alerts' as any);
-        return;
-      }
-      if (href === '/document-analyzer') {
-        onNavigate('document-analyzer' as any);
-        return;
-      }
-      if (href === '/ai-assistant') {
-        onNavigate('ai-assistant' as any);
-        return;
-      }
-      onNavigate('features');
-    }
   };
 
   return (
@@ -396,11 +332,11 @@ export const Navbar: React.FC<NavbarProps> = ({
       <nav className="navbar-inner" aria-label="Main Navigation">
         {/* Left: Logo */}
         <div className="navbar-logo-wrapper">
-          <a
+          <Link
             href="/"
             className="navbar-logo-link"
             aria-label="BrilliusLaw Home"
-            onClick={(e) => handleLinkClick(e, 'home')}
+            onClick={handleLinkClick}
           >
             <img
               src="/assets/brilliuslaw-logo.png"
@@ -409,7 +345,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               width="165"
               height="36"
             />
-          </a>
+          </Link>
         </div>
 
         {/* Center: Desktop Navigation Links */}
@@ -421,17 +357,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             onMouseLeave={handleMouseLeave}
           >
             <div className="features-nav-btn-group">
-              <a
+              <Link
                 href="/features"
                 className={`navbar-link ${activePage === 'features' ? 'active-nav-item' : ''}`}
                 aria-current={activePage === 'features' ? 'page' : undefined}
-                onClick={(e) => handleLinkClick(e, 'features')}
+                onClick={handleLinkClick}
               >
                 Features
                 {activePage === 'features' && (
                   <span className="active-gold-indicator" aria-hidden="true" />
                 )}
-              </a>
+              </Link>
               <button
                 type="button"
                 className={`dropdown-chevron-btn ${featuresDropdownOpen ? 'rotate-chevron' : ''}`}
@@ -459,14 +395,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                     <span className="mega-eyebrow">FEATURES DIRECTORY</span>
                     <h3 className="mega-title">Explore everything BrilliusLaw can help you do.</h3>
                   </div>
-                  <a
+                  <Link
                     href="/features"
                     className="mega-view-all-link"
-                    onClick={(e) => handleLinkClick(e, 'features')}
+                    onClick={handleLinkClick}
                   >
                     <span>View All Features</span>
                     <ArrowRight size={14} aria-hidden="true" />
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mega-dropdown-columns">
@@ -475,18 +411,18 @@ export const Navbar: React.FC<NavbarProps> = ({
                       <span className="mega-column-title">{cat.title}</span>
                       <div className="mega-items-list" role="list">
                         {cat.items.map((item, itemIdx) => (
-                          <a
+                          <Link
                             key={itemIdx}
                             href={item.href}
                             className="mega-feature-item"
-                            onClick={(e) => handleFeatureItemClick(e, item.href)}
+                            onClick={handleFeatureItemClick}
                           >
                             <div className="mega-item-icon-box">{item.icon}</div>
                             <div className="mega-item-text">
                               <span className="mega-item-name">{item.name}</span>
                               <span className="mega-item-desc">{item.desc}</span>
                             </div>
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -495,14 +431,14 @@ export const Navbar: React.FC<NavbarProps> = ({
 
                 <div className="mega-dropdown-footer">
                   <span className="mega-footer-tag">All-in-one legal technology built for India.</span>
-                  <a
+                  <Link
                     href="/features"
                     className="mega-footer-cta"
-                    onClick={(e) => handleLinkClick(e, 'features')}
+                    onClick={handleLinkClick}
                   >
                     <span>Explore Full Features Suite</span>
                     <ArrowRight size={14} aria-hidden="true" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             )}
@@ -515,17 +451,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             onMouseLeave={handleSolutionsMouseLeave}
           >
             <div className="features-nav-btn-group">
-              <a
+              <Link
                 href="/solutions"
                 className={`navbar-link ${activePage === 'solutions' ? 'active-nav-item' : ''}`}
                 aria-current={activePage === 'solutions' ? 'page' : undefined}
-                onClick={(e) => handleLinkClick(e, 'solutions')}
+                onClick={handleLinkClick}
               >
                 Solutions
                 {activePage === 'solutions' && (
                   <span className="active-gold-indicator" aria-hidden="true" />
                 )}
-              </a>
+              </Link>
               <button
                 type="button"
                 className={`dropdown-chevron-btn ${solutionsDropdownOpen ? 'rotate-chevron' : ''}`}
@@ -553,14 +489,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                     <span className="mega-eyebrow">SOLUTIONS BY ROLE</span>
                     <h3 className="mega-title">Find the right BrilliusLaw tools for how you work.</h3>
                   </div>
-                  <a
+                  <Link
                     href="/solutions"
                     className="mega-view-all-link"
-                    onClick={(e) => handleLinkClick(e, 'solutions')}
+                    onClick={handleLinkClick}
                   >
                     <span>View All Solutions</span>
                     <ArrowRight size={14} aria-hidden="true" />
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mega-dropdown-columns solutions-dropdown-columns">
@@ -569,15 +505,15 @@ export const Navbar: React.FC<NavbarProps> = ({
                       <span className="mega-column-title">{cat.title}</span>
                       <div className="solutions-items-list" role="list">
                         {cat.items.map((item, itemIdx) => (
-                          <a
+                          <Link
                             key={itemIdx}
                             href={item.href}
                             className="solutions-feature-item"
-                            onClick={(e) => handleFeatureItemClick(e, item.href)}
+                            onClick={handleFeatureItemClick}
                           >
                             <span className="solutions-item-icon">{item.icon}</span>
                             <span className="solutions-item-name">{item.name}</span>
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -586,14 +522,14 @@ export const Navbar: React.FC<NavbarProps> = ({
 
                 <div className="mega-dropdown-footer">
                   <span className="mega-footer-tag">Solutions organized around how you actually practice.</span>
-                  <a
+                  <Link
                     href="/solutions"
                     className="mega-footer-cta"
-                    onClick={(e) => handleLinkClick(e, 'solutions')}
+                    onClick={handleLinkClick}
                   >
                     <span>Explore Solutions Overview</span>
                     <ArrowRight size={14} aria-hidden="true" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             )}
@@ -601,32 +537,32 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* 3. ABOUT US */}
           <li className="navbar-item">
-            <a
+            <Link
               href="/about"
               className={`navbar-link ${activePage === 'about' ? 'active-nav-item' : ''}`}
               aria-current={activePage === 'about' ? 'page' : undefined}
-              onClick={(e) => handleLinkClick(e, 'about')}
+              onClick={handleLinkClick}
             >
               About Us
               {activePage === 'about' && (
                 <span className="active-gold-indicator" aria-hidden="true" />
               )}
-            </a>
+            </Link>
           </li>
 
           {/* 4. CONTACT */}
           <li className="navbar-item">
-            <a
+            <Link
               href="/contact"
               className={`navbar-link ${activePage === 'contact' ? 'active-nav-item' : ''}`}
               aria-current={activePage === 'contact' ? 'page' : undefined}
-              onClick={(e) => handleLinkClick(e, 'contact')}
+              onClick={handleLinkClick}
             >
               Contact
               {activePage === 'contact' && (
                 <span className="active-gold-indicator" aria-hidden="true" />
               )}
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -658,13 +594,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Mobile Features with Expandable Submenu */}
             <li className="navbar-mobile-item mobile-features-item">
               <div className="mobile-features-header">
-                <a
+                <Link
                   href="/features"
                   className={`navbar-mobile-link ${activePage === 'features' ? 'active-mobile-item' : ''}`}
-                  onClick={(e) => handleLinkClick(e, 'features')}
+                  onClick={handleLinkClick}
                 >
                   Features
-                </a>
+                </Link>
                 <button
                   type="button"
                   className="mobile-expand-btn"
@@ -686,27 +622,27 @@ export const Navbar: React.FC<NavbarProps> = ({
                       <span className="mobile-cat-title">{cat.title}</span>
                       <div className="mobile-cat-items">
                         {cat.items.map((item, itemIdx) => (
-                          <a
+                          <Link
                             key={itemIdx}
                             href={item.href}
                             className="mobile-feature-sublink"
-                            onClick={(e) => handleFeatureItemClick(e, item.href)}
+                            onClick={handleFeatureItemClick}
                           >
                             <span className="mobile-sublink-icon">{item.icon}</span>
                             <span className="mobile-sublink-name">{item.name}</span>
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
                   ))}
-                  <a
+                  <Link
                     href="/features"
                     className="mobile-view-all-features"
-                    onClick={(e) => handleLinkClick(e, 'features')}
+                    onClick={handleLinkClick}
                   >
                     <span>View All Features</span>
                     <ArrowRight size={14} />
-                  </a>
+                  </Link>
                 </div>
               )}
             </li>
@@ -714,13 +650,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Mobile Solutions with Expandable Submenu */}
             <li className="navbar-mobile-item mobile-features-item">
               <div className="mobile-features-header">
-                <a
+                <Link
                   href="/solutions"
                   className={`navbar-mobile-link ${activePage === 'solutions' ? 'active-mobile-item' : ''}`}
-                  onClick={(e) => handleLinkClick(e, 'solutions')}
+                  onClick={handleLinkClick}
                 >
                   Solutions
-                </a>
+                </Link>
                 <button
                   type="button"
                   className="mobile-expand-btn"
@@ -742,51 +678,51 @@ export const Navbar: React.FC<NavbarProps> = ({
                       <span className="mobile-cat-title">{cat.title}</span>
                       <div className="mobile-cat-items">
                         {cat.items.map((item, itemIdx) => (
-                          <a
+                          <Link
                             key={itemIdx}
                             href={item.href}
                             className="mobile-feature-sublink"
-                            onClick={(e) => handleFeatureItemClick(e, item.href)}
+                            onClick={handleFeatureItemClick}
                           >
                             <span className="mobile-sublink-icon">{item.icon}</span>
                             <span className="mobile-sublink-name">{item.name}</span>
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
                   ))}
-                  <a
+                  <Link
                     href="/solutions"
                     className="mobile-view-all-features"
-                    onClick={(e) => handleLinkClick(e, 'solutions')}
+                    onClick={handleLinkClick}
                   >
                     <span>View All Solutions</span>
                     <ArrowRight size={14} />
-                  </a>
+                  </Link>
                 </div>
               )}
             </li>
 
             {/* Mobile About Us */}
             <li className="navbar-mobile-item">
-              <a
+              <Link
                 href="/about"
                 className={`navbar-mobile-link ${activePage === 'about' ? 'active-mobile-item' : ''}`}
-                onClick={(e) => handleLinkClick(e, 'about')}
+                onClick={handleLinkClick}
               >
                 About Us
-              </a>
+              </Link>
             </li>
 
             {/* Mobile Contact */}
             <li className="navbar-mobile-item">
-              <a
+              <Link
                 href="/contact"
                 className={`navbar-mobile-link ${activePage === 'contact' ? 'active-mobile-item' : ''}`}
-                onClick={(e) => handleLinkClick(e, 'contact')}
+                onClick={handleLinkClick}
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
 

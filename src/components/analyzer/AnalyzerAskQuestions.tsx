@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { MessageSquare, CheckCircle2, Search, FileText } from 'lucide-react';
 import './AnalyzerAskQuestions.css';

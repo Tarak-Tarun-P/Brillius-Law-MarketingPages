@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { LayoutTemplate, FileText, CheckCircle2, Scale, Shield, PenLine } from 'lucide-react';
 import './CaseDraftsReadyTemplates.css';

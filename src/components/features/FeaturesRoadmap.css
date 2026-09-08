@@ -365,6 +365,31 @@
   margin-top: 1px;
 }
 
+/* Milestone Explore CTA Button (Reusing WhatsApp Alerts vis-link-btn style) */
+.milestone-footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(9, 21, 38, 0.07);
+  display: flex;
+  align-items: center;
+}
+
+.milestone-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--gold-dark);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.milestone-explore-btn:hover {
+  color: var(--primary-dark);
+  transform: translateX(3px);
+}
+
 /* Milestone Visual Card */
 .milestone-visual-card {
   width: 100%;

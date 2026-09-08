@@ -83,7 +83,7 @@ export const StudentOfferSection: React.FC = () => {
                   <span>Register Now</span>
                   <ArrowRight size={16} aria-hidden="true" />
                 </a>
-                <Link href="/solutions" className="btn-student-secondary">
+                <Link href="/platform" className="btn-student-secondary">
                   <span>Learn More</span>
                 </Link>
               </div>

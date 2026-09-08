@@ -22,9 +22,8 @@ export const Hero: React.FC = () => {
 
             {/* Main Headline */}
             <h1 className="hero-headline animate-fade-in-up delay-200">
-              Modern Legal<br />
-              Intelligence.<br />
-              <span className="hero-headline-sub">Built for the Law.</span>
+              Where Legal Work<br />
+              Comes Together.
             </h1>
 
             {/* Description */}

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import {
   ArrowDown,
   Layers,
@@ -9,6 +10,7 @@ import {
   Archive,
   Building2,
   Check,
+  ArrowRight,
 } from 'lucide-react';
 import { ClientManagementVisual } from './visuals/ClientManagementVisual';
 import { CaseManagementVisual } from './visuals/CaseManagementVisual';
@@ -38,6 +40,8 @@ interface Milestone {
   title: string;
   desc: string;
   bullets: string[];
+  ctaLabel: string;
+  ctaHref: string;
   visual: React.ReactNode;
   align: 'left' | 'right'; // left = text left, visual right; right = text right, visual left
 }
@@ -73,6 +77,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Direct visibility into pending actions, documents, and client communications',
             'Verified KYC and corporate entity relationship mapping',
           ],
+          ctaLabel: 'Explore Client Management',
+          ctaHref: '/client-management',
           visual: <ClientManagementVisual />,
           align: 'left',
         },
@@ -87,6 +93,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Task allocation across partners, briefing counsel, and associates',
             'Real-time priority alerts for urgent limitation dates and filing windows',
           ],
+          ctaLabel: 'Explore Case Management',
+          ctaHref: '/cases',
           visual: <CaseManagementVisual />,
           align: 'right',
         },
@@ -111,6 +119,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Courtroom, bench, and item number details attached to every appearance',
             'Automated hearing reminders for lead advocates and briefing associates',
           ],
+          ctaLabel: 'Explore Hearings & Calendar',
+          ctaHref: '/hearings',
           visual: <HearingsCalendarVisual />,
           align: 'left',
         },
@@ -135,6 +145,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Structured folders categorized by court, client, and practice domain',
             'Strict confidentiality with matter-level document permission locks',
           ],
+          ctaLabel: 'Explore Document Management',
+          ctaHref: '/document-storage',
           visual: <DocumentStorageVisual />,
           align: 'right',
         },
@@ -149,6 +161,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Smart clause suggestions to prevent ambiguous wording and unneeded risk',
             'Distraction-free environment with formatting tools built specifically for legal drafts',
           ],
+          ctaLabel: 'Explore Drafting Lab',
+          ctaHref: '/drafting-lab',
           visual: <DraftingLabVisual />,
           align: 'left',
         },
@@ -163,6 +177,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Final certified court filing copies segregated from working internal revisions',
             'Full chronological revision history preserving all matter contributions',
           ],
+          ctaLabel: 'Explore Case Drafts',
+          ctaHref: '/case-drafts',
           visual: <CaseDraftsVisual />,
           align: 'right',
         },
@@ -177,6 +193,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Identifies modified liability caps, indemnity terms, and statutory references',
             'Export comprehensive redline reports ready for opposing counsel negotiation',
           ],
+          ctaLabel: 'Explore Compare & Review',
+          ctaHref: '/compare-review',
           visual: <VersionCompareVisual />,
           align: 'left',
         },
@@ -191,6 +209,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Automated notifications when review comments or approvals are requested',
             'Digital verification and approval records for compliance and peace of mind',
           ],
+          ctaLabel: 'Explore Document Approvals',
+          ctaHref: '/features',
           visual: <DocumentApprovalsVisual />,
           align: 'right',
         },
@@ -216,6 +236,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Connected Judgments: Move seamlessly from any Bare Act section to the court decisions that interpret it',
             'Bookmark for Later: Save important sections and judgments directly to your personal journal in one click',
           ],
+          ctaLabel: 'Explore Law Library',
+          ctaHref: '/law-library',
           visual: <LawLibraryVisual />,
           align: 'left',
         },
@@ -230,6 +252,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Explore organized Bare Acts, statutory sections, and legal provisions',
             'Pinpoint headnotes, judicial ratios, and citation references in seconds',
           ],
+          ctaLabel: 'Explore Legal Research',
+          ctaHref: '/legal-research',
           visual: <LegalResearchVisual />,
           align: 'right',
         },
@@ -245,6 +269,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Organized by Matter: Tag notes to specific clients and cases so you can quickly return to them when drafting',
             'Completely Private: Your journal is your personal notebook, protected with strict encryption and accessible only by you',
           ],
+          ctaLabel: 'Explore My Journal',
+          ctaHref: '/my-journal',
           visual: <MyJournalVisual />,
           align: 'left',
         },
@@ -269,6 +295,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Every conclusion is grounded with exact paragraph and page citations',
             'Quickly cross-references definitions with schedules and annexures',
           ],
+          ctaLabel: 'Explore Document Analyzer',
+          ctaHref: '/document-analyzer',
           visual: <DocumentAnalyzerVisual />,
           align: 'right',
         },
@@ -283,6 +311,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Evaluates statutory limitation periods, procedural thresholds, and grounds',
             'Provides direct citations to relevant landmark Indian Supreme Court judgments',
           ],
+          ctaLabel: 'Explore AI Assistant',
+          ctaHref: '/ai-assistant',
           visual: <AIAssistantVisual />,
           align: 'left',
         },
@@ -297,6 +327,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Checks statutory alignment with Indian contract and procedural laws',
             'Empowers advocates to draft faster while keeping full editorial control',
           ],
+          ctaLabel: 'Explore AI Drafting Assistant',
+          ctaHref: '/drafting-lab',
           visual: <AIDraftingVisual />,
           align: 'right',
         },
@@ -321,6 +353,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Section 65B Indian Evidence Act admissibility compliance records',
             'Direct cross-linking of exhibit annexures to active case drafts',
           ],
+          ctaLabel: 'Explore Evidence & Exhibits',
+          ctaHref: '/evidence',
           visual: <EvidenceStorageVisual />,
           align: 'left',
         },
@@ -345,6 +379,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Create, review, track, and manage invoices for legal work and case expenses',
             'Real-time collections visibility to accelerate firm cash flow and realization',
           ],
+          ctaLabel: 'Explore Billing & Invoice Management',
+          ctaHref: '/billing-invoicing',
           visual: <BillingOverviewVisual />,
           align: 'right',
         },
@@ -359,6 +395,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Matter-level access boundaries protect sensitive client secrets and documents',
             'Complete activity logs maintain firm-wide accountability and visibility',
           ],
+          ctaLabel: 'Explore Firm & Team Management',
+          ctaHref: '/firm-management',
           visual: <TeamManagementVisual />,
           align: 'left',
         },
@@ -373,6 +411,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Next listing dates and court orders matched directly with internal client files',
             'Keep upcoming hearing and cause list information easier to track',
           ],
+          ctaLabel: 'Explore eCourts Case Monitoring',
+          ctaHref: '/ecourts-sync',
           visual: <ECourtsMonitoringVisual />,
           align: 'right',
         },
@@ -387,6 +427,8 @@ export const FeaturesRoadmap: React.FC = () => {
             'Receive timely reminders for overdue tasks and important filing deadlines',
             'Get instant notifications for draft review requests, revisions, and document approvals',
           ],
+          ctaLabel: 'Explore WhatsApp Alerts',
+          ctaHref: '/whatsapp-alerts',
           visual: <WhatsAppAlertsVisual />,
           align: 'left',
         },
@@ -475,6 +517,14 @@ export const FeaturesRoadmap: React.FC = () => {
                             </li>
                           ))}
                         </ul>
+
+                        {/* Milestone Bottom Explore CTA */}
+                        <div className="milestone-footer">
+                          <Link href={ms.ctaHref} className="milestone-explore-btn">
+                            <span>{ms.ctaLabel}</span>
+                            <ArrowRight size={13} />
+                          </Link>
+                        </div>
                       </div>
 
                       {/* Visual Mockup Column */}

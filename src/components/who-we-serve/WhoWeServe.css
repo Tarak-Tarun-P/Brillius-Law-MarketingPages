@@ -1,0 +1,662 @@
+/* ------------------------------------------------------------- */
+/* WHO WE SERVE / WHO BRILLIUSLAW IS BUILT FOR - PAGE STYLES    */
+/* ------------------------------------------------------------- */
+
+.who-we-serve-main {
+  position: relative;
+  width: 100%;
+  background: var(--bg-ivory);
+  overflow-x: hidden;
+}
+
+/* ------------------------------------------------------------- */
+/* 01. HERO SECTION                                              */
+/* ------------------------------------------------------------- */
+.wws-hero-section {
+  position: relative;
+  padding: 136px 0 68px 0;
+  background: var(--bg-ivory);
+  overflow: hidden;
+  text-align: center;
+}
+
+.wws-hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(90px);
+}
+
+.wws-hero-glow.glow-gold {
+  top: -40px;
+  right: 18%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(198, 161, 91, 0.14) 0%, transparent 70%);
+}
+
+.wws-hero-glow.glow-navy {
+  top: 50px;
+  left: 12%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(9, 21, 38, 0.05) 0%, transparent 70%);
+}
+
+.wws-hero-bg-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.wws-hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.wws-hero-eyebrow-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.wws-hero-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.wws-hero-eyebrow-line {
+  display: inline-block;
+  width: 44px;
+  height: 1.5px;
+  background-color: var(--gold);
+  border-radius: 1px;
+}
+
+.wws-hero-headline {
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--primary-dark);
+  letter-spacing: -0.025em;
+  margin-bottom: 22px;
+}
+
+.wws-hero-headline-accent {
+  display: block;
+  color: var(--gold-dark);
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 46px;
+  margin-top: 6px;
+}
+
+.wws-hero-description {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 760px;
+  margin: 0 auto 36px auto;
+}
+
+/* ------------------------------------------------------------- */
+/* 02. QUICK JUMP AUDIENCE NAV RIBBON                            */
+/* ------------------------------------------------------------- */
+.wws-audience-nav-section {
+  position: sticky;
+  top: 86px;
+  z-index: 30;
+  background: rgba(247, 245, 239, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 14px 0;
+  border-top: 1px solid rgba(198, 161, 91, 0.2);
+  border-bottom: 1px solid rgba(198, 161, 91, 0.2);
+}
+
+.wws-nav-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) transparent;
+  padding: 2px 4px;
+}
+
+.wws-nav-track::-webkit-scrollbar {
+  height: 3px;
+}
+
+.wws-nav-track::-webkit-scrollbar-thumb {
+  background-color: var(--gold);
+  border-radius: 3px;
+}
+
+.wws-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(198, 161, 91, 0.25);
+  border-radius: 24px;
+  color: var(--primary-dark);
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: var(--transition-smooth);
+}
+
+.wws-nav-pill:hover {
+  background: var(--white);
+  border-color: var(--gold);
+  color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(198, 161, 91, 0.15);
+}
+
+.wws-nav-pill-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+  background: rgba(198, 161, 91, 0.12);
+  padding: 2px 7px;
+  border-radius: 10px;
+}
+
+/* ------------------------------------------------------------- */
+/* AUDIENCE SECTIONS - COMMON BASE                               */
+/* ------------------------------------------------------------- */
+.wws-section {
+  position: relative;
+  padding: 96px 0;
+  border-bottom: 1px solid rgba(224, 224, 219, 0.7);
+}
+
+.wws-section.bg-subtle-ivory {
+  background: var(--bg-ivory);
+}
+
+.wws-section.bg-white-tint {
+  background: #FCFBF8;
+}
+
+.wws-section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.wws-section-grid.reverse-layout {
+  direction: rtl;
+}
+
+.wws-section-grid.reverse-layout > * {
+  direction: ltr;
+}
+
+/* Text Column */
+.wws-content-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.wws-audience-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  padding: 5px 14px;
+  background: rgba(198, 161, 91, 0.12);
+  border: 1px solid rgba(198, 161, 91, 0.3);
+  border-radius: 20px;
+  color: var(--gold-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.wws-section-title {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.18;
+  color: var(--primary-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.wws-section-desc {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+}
+
+.wws-features-subheading {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+/* Feature Tag Cloud */
+.wws-feature-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.wws-feature-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  color: var(--primary-dark);
+  font-size: 13px;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.wws-feature-pill:hover {
+  border-color: var(--gold);
+  background: var(--white);
+  color: var(--gold-dark);
+  transform: translateY(-1px);
+}
+
+.wws-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  border-bottom: 1.5px solid var(--gold);
+  padding-bottom: 3px;
+  align-self: flex-start;
+  transition: var(--transition-smooth);
+}
+
+.wws-cta-link:hover {
+  color: var(--gold-dark);
+  border-color: var(--primary-dark);
+  transform: translateX(3px);
+}
+
+/* Visual Column */
+.wws-visual-col {
+  position: relative;
+  width: 100%;
+}
+
+/* ------------------------------------------------------------- */
+/* 04. CORPORATE + LEGAL COUNSEL WORKFLOW SHOWCASE               */
+/* ------------------------------------------------------------- */
+.wws-corp-counsel-showcase {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wws-corp-header-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(224, 224, 219, 0.6);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.wws-corp-header-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.wws-corp-header-tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold-dark);
+  background: rgba(198, 161, 91, 0.12);
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+/* Stakeholder Tier Box */
+.wws-stakeholders-tier {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.wws-stakeholder-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background: #F9F8F5;
+  border: 1px solid rgba(224, 224, 219, 0.75);
+  border-radius: 10px;
+}
+
+.wws-stakeholder-card.primary {
+  border-color: rgba(198, 161, 91, 0.4);
+  background: rgba(198, 161, 91, 0.05);
+}
+
+.wws-stakeholder-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--white);
+  border: 1px solid rgba(198, 161, 91, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wws-stakeholder-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.wws-stakeholder-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.wws-stakeholder-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.wws-arrow-down-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -4px 0;
+}
+
+/* Central Matter Node */
+.wws-matter-center-node {
+  background: var(--primary-dark);
+  color: var(--white);
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 16px rgba(9, 21, 38, 0.12);
+}
+
+.wws-matter-node-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wws-matter-node-icon {
+  color: var(--gold);
+}
+
+.wws-matter-node-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.wws-matter-node-sub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.wws-matter-node-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+  border: 1px solid rgba(198, 161, 91, 0.4);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+/* Horizontal Journey Track */
+.wws-journey-track-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wws-journey-track-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.wws-journey-steps-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.wws-journey-step-box {
+  background: #F9F8F5;
+  border: 1px solid rgba(224, 224, 219, 0.8);
+  border-radius: 8px;
+  padding: 10px 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+.wws-journey-step-box.active {
+  border-color: var(--gold);
+  background: rgba(198, 161, 91, 0.08);
+}
+
+.wws-step-num {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gold-dark);
+}
+
+.wws-step-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+/* ------------------------------------------------------------- */
+/* 06. SUMMARY ECOSYSTEM MATRIX BANNER                           */
+/* ------------------------------------------------------------- */
+.wws-matrix-section {
+  position: relative;
+  padding: 96px 0;
+  background: var(--bg-ivory);
+}
+
+.wws-matrix-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 52px auto;
+}
+
+.wws-matrix-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 14px;
+}
+
+.wws-matrix-desc {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.wws-matrix-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.wws-matrix-card {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.wws-matrix-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.wws-matrix-card.featured {
+  border-color: rgba(198, 161, 91, 0.5);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(247, 245, 239, 0.5) 100%);
+}
+
+.wws-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.wws-card-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+  background: rgba(198, 161, 91, 0.12);
+  padding: 2px 7px;
+  border-radius: 10px;
+}
+
+.wws-card-icon {
+  color: var(--primary-dark);
+}
+
+.wws-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.wws-card-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.wws-card-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--transition-smooth);
+}
+
+.wws-card-link:hover {
+  color: var(--primary-dark);
+  transform: translateX(2px);
+}
+
+/* ------------------------------------------------------------- */
+/* RESPONSIVE BREAKPOINTS                                        */
+/* ------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .wws-matrix-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .wws-hero-headline {
+    font-size: 42px;
+  }
+  .wws-hero-headline-accent {
+    font-size: 36px;
+  }
+  .wws-section-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .wws-section-grid.reverse-layout {
+    direction: ltr;
+  }
+  .wws-matrix-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .wws-hero-section {
+    padding: 100px 0 48px 0;
+  }
+  .wws-hero-headline {
+    font-size: 34px;
+  }
+  .wws-hero-headline-accent {
+    font-size: 28px;
+  }
+  .wws-hero-description {
+    font-size: 16.5px;
+  }
+  .wws-section {
+    padding: 64px 0;
+  }
+  .wws-section-title {
+    font-size: 28px;
+  }
+  .wws-journey-steps-row {
+    grid-template-columns: 1fr;
+  }
+  .wws-matrix-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

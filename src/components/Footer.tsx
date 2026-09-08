@@ -19,34 +19,36 @@ export const Footer: React.FC = () => {
               />
             </Link>
             <p className="footer-tagline">
-              Modern Legal Intelligence. Built for Indian Jurisprudence &amp; Enterprise Law.
+              Where Legal Work Comes Together.
             </p>
           </div>
 
           {/* 4 Balanced Navigation Columns */}
           <div className="footer-links-group">
-            {/* 1. PRODUCT */}
+            {/* 1. COMPANY */}
+            <div className="footer-links-col">
+              <span className="footer-col-title">Company</span>
+              <Link href="/about">About Us</Link>
+              <Link href="/who-we-serve">Who We Serve</Link>
+              <Link href="/partners">Partners</Link>
+              <Link href="/contact">Contact</Link>
+            </div>
+
+            {/* 2. PRODUCT */}
             <div className="footer-links-col">
               <span className="footer-col-title">Product</span>
+              <Link href="/platform">Platform</Link>
               <Link href="/features">Features</Link>
-              <Link href="/solutions">Solutions</Link>
               <Link href="/legal-research">Legal Research</Link>
               <Link href="/ai-assistant">AI Assistant</Link>
               <Link href="/document-analyzer">Document Analyzer</Link>
               <Link href="/ecourts-sync">eCourts Sync</Link>
             </div>
 
-            {/* 2. COMPANY */}
-            <div className="footer-links-col">
-              <span className="footer-col-title">Company</span>
-              <Link href="/about">About Us</Link>
-              <Link href="/partners">Partners</Link>
-              <Link href="/contact">Contact</Link>
-            </div>
-
             {/* 3. RESOURCES */}
             <div className="footer-links-col">
               <span className="footer-col-title">Resources</span>
+              <Link href="/blog">Blog</Link>
               <Link href="/law-library">Law Library</Link>
               <Link href="/my-journal">My Journal</Link>
               <Link href="/support">Support</Link>
@@ -65,7 +67,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Copyright & Heritage */}
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © {new Date().getFullYear()} BrilliusLaw Technologies Pvt. Ltd. All rights reserved.
+            © {new Date().getFullYear()} @brilliuslaw. All rights reserved.
           </p>
           <p className="footer-heritage">
             Honouring India&apos;s Constitutional Heritage with Modern Legal Technology.

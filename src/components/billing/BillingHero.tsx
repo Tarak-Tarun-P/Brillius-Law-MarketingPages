@@ -47,7 +47,7 @@ export const BillingHero: React.FC = () => {
             </p>
 
             <div className="billing-hero-actions">
-              <a href="#get-started" className="btn-billing-primary">
+              <a href="/coming-soon" className="btn-billing-primary">
                 <span>Get Started</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

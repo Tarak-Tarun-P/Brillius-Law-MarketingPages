@@ -39,7 +39,7 @@ export const HearingsHero: React.FC = () => {
             </p>
 
             <div className="hearings-hero-actions">
-              <a href="#get-started" className="btn-hearings-primary">
+              <a href="/coming-soon" className="btn-hearings-primary">
                 <span>Explore Hearings</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

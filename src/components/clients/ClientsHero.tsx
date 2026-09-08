@@ -72,7 +72,7 @@ export const ClientsHero: React.FC = () => {
             </p>
 
             <div className="clients-hero-actions">
-              <a href="#get-started" className="btn-clients-primary">
+              <a href="/coming-soon" className="btn-clients-primary">
                 <span>Explore Client Management</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

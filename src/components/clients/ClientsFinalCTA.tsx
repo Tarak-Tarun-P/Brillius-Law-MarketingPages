@@ -27,7 +27,7 @@ export const ClientsFinalCTA: React.FC = () => {
             </p>
 
             <div className="clients-final-actions">
-              <a href="#get-started" className="btn-final-gold">
+              <a href="/coming-soon" className="btn-final-gold">
                 <span>Explore Clients</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

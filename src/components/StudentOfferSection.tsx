@@ -79,7 +79,7 @@ export const StudentOfferSection: React.FC = () => {
 
               {/* CTA Action Buttons */}
               <div className="student-cta-group">
-                <a href="#get-started" className="btn-student-primary">
+                <a href="/coming-soon" className="btn-student-primary">
                   <span>Register Now</span>
                   <ArrowRight size={16} aria-hidden="true" />
                 </a>

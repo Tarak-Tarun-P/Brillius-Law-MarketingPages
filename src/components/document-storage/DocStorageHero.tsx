@@ -64,7 +64,7 @@ export const DocStorageHero: React.FC = () => {
             </p>
 
             <div className="doc-hero-actions">
-              <a href="#get-started" className="btn-doc-primary">
+              <a href="/coming-soon" className="btn-doc-primary">
                 <span>Get Started</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

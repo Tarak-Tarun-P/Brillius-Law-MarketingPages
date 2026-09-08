@@ -51,7 +51,7 @@ export const FirmHero: React.FC = () => {
             </p>
 
             <div className="firm-hero-actions">
-              <a href="#get-started" className="btn-firm-primary">
+              <a href="/coming-soon" className="btn-firm-primary">
                 <span>Get Started</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

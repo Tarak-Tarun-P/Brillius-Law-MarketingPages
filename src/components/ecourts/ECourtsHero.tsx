@@ -48,7 +48,7 @@ export const ECourtsHero: React.FC = () => {
             </p>
 
             <div className="ecourts-hero-actions">
-              <a href="#get-started" className="btn-ecourts-primary">
+              <a href="/coming-soon" className="btn-ecourts-primary">
                 <span>Get Started</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

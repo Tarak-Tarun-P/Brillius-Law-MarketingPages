@@ -29,7 +29,7 @@ export const JournalFinalCTA: React.FC = () => {
             </p>
 
             <div className="journal-final-actions">
-              <a href="#get-started" className="btn-final-gold">
+              <a href="/coming-soon" className="btn-final-gold">
                 <span>Explore My Journal</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

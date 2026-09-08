@@ -39,7 +39,7 @@ export const DraftingHero: React.FC = () => {
             </p>
 
             <div className="drafting-hero-actions">
-              <a href="#get-started" className="btn-drafting-primary">
+              <a href="/coming-soon" className="btn-drafting-primary">
                 <span>Explore Drafting Lab</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

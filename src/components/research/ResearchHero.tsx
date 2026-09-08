@@ -54,7 +54,7 @@ export const ResearchHero: React.FC = () => {
             </p>
 
             <div className="research-hero-actions">
-              <a href="#get-started" className="btn-research-primary">
+              <a href="/coming-soon" className="btn-research-primary">
                 <span>Explore Legal Research</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

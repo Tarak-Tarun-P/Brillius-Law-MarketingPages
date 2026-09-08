@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import './SolutionsFinalCTA.css';
 
@@ -26,10 +27,10 @@ export const SolutionsFinalCTA: React.FC = () => {
             </p>
 
             <div className="sol-final-actions">
-              <a href="#get-started" className="btn-sol-final-gold">
+              <Link href="/coming-soon" className="btn-sol-final-gold">
                 <span>Get Started</span>
                 <ArrowRight size={16} aria-hidden="true" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

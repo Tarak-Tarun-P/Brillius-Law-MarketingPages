@@ -41,7 +41,7 @@ export const JournalHero: React.FC = () => {
             </p>
 
             <div className="journal-hero-actions">
-              <a href="#get-started" className="btn-journal-primary">
+              <a href="/coming-soon" className="btn-journal-primary">
                 <span>Explore My Journal</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

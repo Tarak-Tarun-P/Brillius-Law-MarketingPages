@@ -66,7 +66,7 @@ export const CasesHero: React.FC = () => {
             </p>
 
             <div className="cases-hero-actions">
-              <a href="#get-started" className="btn-cases-primary">
+              <a href="/coming-soon" className="btn-cases-primary">
                 <span>Explore Case Management</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

@@ -39,7 +39,7 @@ export const EvidenceHero: React.FC = () => {
             </p>
 
             <div className="evidence-hero-actions">
-              <a href="#get-started" className="btn-evidence-primary">
+              <a href="/coming-soon" className="btn-evidence-primary">
                 <span>Explore Evidence</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

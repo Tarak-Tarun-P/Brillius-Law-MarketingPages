@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Scale, FileSpreadsheet, ShieldCheck, Landmark, Check, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import { Scale, Users, ShieldCheck, Landmark, Check, ArrowRight } from 'lucide-react';
 import './PracticeAreasSection.css';
 
 interface PracticeArea {
@@ -25,48 +26,53 @@ export const PracticeAreasSection: React.FC = () => {
       tabLabel: 'Litigation & Dispute Resolution',
       title: 'Litigation & Dispute Resolution',
       icon: <Scale size={20} className="practice-icon" />,
-      tagline: 'Precision litigation workflow & court preparation',
+      tagline: 'End-to-End Litigation & Court Preparation Tools',
       description:
-        'Research case law and precedents, review case facts chronologically, manage hearings and matters, and prepare legal notices and drafts.',
+        'BrilliusLaw brings case facts, hearings, exhibits, court dates, precedents, and pleading drafts into one connected litigation workspace.',
       keyPoints: [
-        'Case-law and precedent research',
-        'Chronological case and fact review',
-        'Hearing and matter tracking',
-        'Legal notice and document drafting',
+        'Case Management & Timeline Tracking',
+        'Client & Matter Management',
+        'Hearings & Calendar Scheduling',
+        'Evidence & Exhibits Repository',
+        'Legal Research & Precedent Search',
+        'Case Drafts & Legal Notice Preparation',
+        'Document Storage & Management',
       ],
       ctaLink: '/cases',
       ctaText: 'Explore Litigation Workflows',
     },
     {
-      id: 'corporate',
-      tabLabel: 'Corporate & M&A',
-      title: 'Corporate & M&A',
-      icon: <FileSpreadsheet size={20} className="practice-icon" />,
-      tagline: 'Structured contract review & transaction workspaces',
+      id: 'internal-teams',
+      tabLabel: 'Internal Legal Teams',
+      title: 'Internal Legal Teams',
+      icon: <Users size={20} className="practice-icon" />,
+      tagline: 'Unified Workspace for Corporate Legal Operations',
       description:
-        'Review contracts, identify important clauses, organize transaction documents, and support due-diligence work in one place.',
+        'Keep matters, contracts, documents, reviews, research, and approvals organized across your legal work with purpose-built collaboration tools.',
       keyPoints: [
-        'Contract review',
-        'Clause issue identification',
-        'Document comparison',
-        'Due-diligence support',
+        'Document Storage & Management',
+        'Compare & Review Version Intelligence',
+        'Document Approvals & Workflow Tracking',
+        'Legal Research & Precedent Intelligence',
+        'Document Analyzer for Instant Insights',
+        'Drafting Lab & Standard Clause Library',
       ],
       ctaLink: '/compare-review',
-      ctaText: 'Explore Corporate & M&A Tools',
+      ctaText: 'Explore Legal Team Workflows',
     },
     {
       id: 'regulatory',
       tabLabel: 'Regulatory & Compliance',
       title: 'Regulatory & Compliance',
       icon: <ShieldCheck size={20} className="practice-icon" />,
-      tagline: 'Statutory awareness & tribunal tracking',
+      tagline: 'Statutory Intelligence & Compliance Organization',
       description:
-        'Keep track of relevant statutory, regulatory, and tribunal developments and organize the legal work needed to respond.',
+        'Bring legal research, regulatory information, documents, and related work together in one organized workspace.',
       keyPoints: [
-        'Statutory research',
-        'Regulatory updates',
-        'Notifications',
-        'Tribunal developments',
+        'Legal Research for Case Precedents',
+        'Law Library with Bare Acts & Statutes',
+        'Document Storage & Management',
+        'Document Analyzer for Fast Review',
       ],
       ctaLink: '/legal-research',
       ctaText: 'Explore Regulatory Workflows',
@@ -76,14 +82,17 @@ export const PracticeAreasSection: React.FC = () => {
       tabLabel: 'Chambers & Practice Management',
       title: 'Chambers & Practice Management',
       icon: <Landmark size={20} className="practice-icon" />,
-      tagline: 'Unified chamber operations & cause-list clarity',
+      tagline: 'Streamlined Chamber Operations & Team Coordination',
       description:
-        'Keep daily chamber work organized with case tracking, cause-list updates, evidence, documents, and client matters.',
+        'BrilliusLaw unifies your chamber practice with integrated client tracking, hearing schedules, fee management, and court updates.',
       keyPoints: [
-        'Cause-list tracking',
-        'Evidence organization',
-        'Client matter tracking',
-        'Case and document management',
+        'Client Management & Contacts',
+        'Case Management & Matter Tracking',
+        'Firm & Team Management',
+        'Billing & Invoicing',
+        'Document Storage & Management',
+        'Hearings & Daily Cause-List Tracking',
+        'WhatsApp Alerts for Immediate Updates',
       ],
       ctaLink: '/firm-management',
       ctaText: 'Explore Chambers Management',
@@ -155,10 +164,10 @@ export const PracticeAreasSection: React.FC = () => {
               <p className="practice-panel-desc">{currentArea.description}</p>
 
               <div className="practice-panel-action">
-                <a href={currentArea.ctaLink} className="practice-action-link">
+                <Link href={currentArea.ctaLink} className="practice-action-link">
                   <span>{currentArea.ctaText}</span>
                   <ArrowRight size={15} aria-hidden="true" />
-                </a>
+                </Link>
               </div>
             </div>
 

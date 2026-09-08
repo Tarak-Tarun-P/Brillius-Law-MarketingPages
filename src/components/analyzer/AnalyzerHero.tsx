@@ -39,7 +39,7 @@ export const AnalyzerHero: React.FC = () => {
             </p>
 
             <div className="analyzer-hero-actions">
-              <a href="#get-started" className="btn-analyzer-primary">
+              <a href="/coming-soon" className="btn-analyzer-primary">
                 <span>Try Document Analyzer</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

@@ -39,7 +39,7 @@ export const CompareHero: React.FC = () => {
             </p>
 
             <div className="compare-hero-actions">
-              <a href="#get-started" className="btn-compare-primary">
+              <a href="/coming-soon" className="btn-compare-primary">
                 <span>Explore Compare & Review</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

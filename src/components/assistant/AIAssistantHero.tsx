@@ -39,7 +39,7 @@ export const AIAssistantHero: React.FC = () => {
             </p>
 
             <div className="assistant-hero-actions">
-              <a href="#get-started" className="btn-assistant-primary">
+              <a href="/coming-soon" className="btn-assistant-primary">
                 <span>Try AI Assistant</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

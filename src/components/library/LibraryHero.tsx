@@ -39,7 +39,7 @@ export const LibraryHero: React.FC = () => {
             </p>
 
             <div className="library-hero-actions">
-              <a href="#get-started" className="btn-library-primary">
+              <a href="/coming-soon" className="btn-library-primary">
                 <span>Explore Law Library</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

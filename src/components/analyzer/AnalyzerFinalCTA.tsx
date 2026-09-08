@@ -27,7 +27,7 @@ export const AnalyzerFinalCTA: React.FC = () => {
             </p>
 
             <div className="analyzer-final-actions">
-              <a href="#get-started" className="btn-final-gold">
+              <a href="/coming-soon" className="btn-final-gold">
                 <span>Try Document Analyzer</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

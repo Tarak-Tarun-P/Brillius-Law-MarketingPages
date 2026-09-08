@@ -26,7 +26,7 @@ export const ResearchFinalCTA: React.FC = () => {
             </p>
 
             <div className="final-cta-buttons-row">
-              <a href="#get-started" className="btn-cta-gold">
+              <a href="/coming-soon" className="btn-cta-gold">
                 <span>Explore Legal Research</span>
                 <ArrowRight size={16} />
               </a>

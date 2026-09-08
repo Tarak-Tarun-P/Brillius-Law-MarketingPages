@@ -27,10 +27,10 @@ export const LandingPageFinalCTA: React.FC = () => {
             </p>
 
             <div className="landing-cta-buttons-row">
-              <a href="#get-started" className="landing-btn-primary">
+              <Link href="/coming-soon" className="landing-btn-primary">
                 <span>Get Started</span>
                 <ArrowRight size={16} className="btn-arrow-icon" aria-hidden="true" />
-              </a>
+              </Link>
 
               <Link href="/features" className="landing-btn-secondary">
                 <span>Explore Features</span>

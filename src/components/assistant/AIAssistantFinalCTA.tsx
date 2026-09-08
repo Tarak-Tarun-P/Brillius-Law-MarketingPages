@@ -29,7 +29,7 @@ export const AIAssistantFinalCTA: React.FC = () => {
             </p>
 
             <div className="assistant-final-actions">
-              <a href="#get-started" className="btn-final-gold">
+              <a href="/coming-soon" className="btn-final-gold">
                 <span>Try AI Assistant</span>
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

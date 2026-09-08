@@ -684,10 +684,10 @@ export const Navbar: React.FC = () => {
 
         {/* Right: Get Started CTA Button */}
         <div className="navbar-actions">
-          <a href="#get-started" className="navbar-cta-button">
+          <Link href="/coming-soon" className="navbar-cta-button" onClick={handleLinkClick}>
             <span>Get Started</span>
             <span className="navbar-cta-arrow" aria-hidden="true">→</span>
-          </a>
+          </Link>
 
           {/* Mobile Menu Toggle Button */}
           <button
@@ -879,14 +879,14 @@ export const Navbar: React.FC = () => {
           </ul>
 
           <div className="navbar-mobile-cta">
-            <a
-              href="#get-started"
+            <Link
+              href="/coming-soon"
               className="navbar-cta-button navbar-mobile-btn"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span>Get Started</span>
               <span className="navbar-cta-arrow" aria-hidden="true">→</span>
-            </a>
+            </Link>
           </div>
         </div>
       )}

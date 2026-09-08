@@ -289,45 +289,120 @@
 }
 
 /* ============================================================== */
-/* SOLUTIONS DROPDOWN (reuses the Features mega-dropdown shell)   */
+/* SIMPLIFIED ROLE-FIRST PLATFORM DROPDOWN                        */
 /* ============================================================== */
-.solutions-mega-dropdown {
-  max-height: calc(100vh - 140px);
-  overflow-y: auto;
+.platform-role-dropdown {
+  width: 780px;
+  transform: translateX(-35%);
+  padding: 24px 28px 20px 28px;
 }
 
-/* 3 Columns Layout (Firms / Advocates & Lawyers / Students) */
-.solutions-dropdown-columns {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.solutions-items-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.solutions-feature-item {
+/* 3 Role Selector Buttons Bar */
+.platform-role-selector-bar {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 7px 10px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.solutions-feature-item:hover {
-  background-color: var(--bg-ivory);
-  transform: translateX(2px);
-}
-
-.solutions-item-icon {
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
+  padding: 6px;
   background: var(--bg-ivory);
-  border: 1px solid rgba(198, 161, 91, 0.25);
+  border: 1px solid rgba(198, 161, 91, 0.22);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.platform-role-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.platform-role-btn:hover {
+  color: var(--primary-dark);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.platform-role-btn.active-role {
+  color: var(--primary-dark);
+  background: var(--white);
+  border-color: rgba(198, 161, 91, 0.4);
+  box-shadow: 0 2px 8px rgba(9, 21, 38, 0.06);
+  font-weight: 700;
+}
+
+.platform-role-btn.active-role svg {
+  color: var(--gold-dark);
+}
+
+/* Content Area */
+.platform-role-content {
+  min-height: 190px;
+  margin-bottom: 20px;
+}
+
+/* Default Key Features State */
+.platform-preview-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1.5px solid rgba(198, 161, 91, 0.25);
+}
+
+.platform-preview-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+}
+
+.platform-preview-hint {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.platform-key-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.platform-key-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: var(--bg-ivory);
+  border: 1px solid rgba(198, 161, 91, 0.15);
+  transition: var(--transition-smooth);
+}
+
+.platform-key-feature-item:hover {
+  background: var(--white);
+  border-color: var(--gold);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(9, 21, 38, 0.06);
+}
+
+.platform-item-icon-box {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--white);
+  border: 1px solid rgba(198, 161, 91, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -336,16 +411,121 @@
   transition: var(--transition-smooth);
 }
 
-.solutions-feature-item:hover .solutions-item-icon {
-  background: rgba(198, 161, 91, 0.2);
+.platform-key-feature-item:hover .platform-item-icon-box,
+.platform-role-feature-item:hover .platform-item-icon-box {
+  background: rgba(198, 161, 91, 0.18);
+  border-color: var(--gold);
+  color: var(--primary-dark);
+}
+
+.platform-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.platform-item-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.25;
+}
+
+.platform-item-desc {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+/* Selected Role State */
+.platform-role-meta-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid rgba(198, 161, 91, 0.25);
+}
+
+.platform-role-meta-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.platform-role-active-tag {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gold-dark);
+}
+
+.platform-role-meta-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.platform-role-meta-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.platform-reset-role-btn {
+  background: var(--bg-ivory);
+  border: 1px solid rgba(198, 161, 91, 0.25);
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition-smooth);
+}
+
+.platform-reset-role-btn:hover {
+  background: var(--white);
   border-color: var(--gold);
 }
 
-.solutions-item-name {
-  font-size: 13px;
+.platform-role-items-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.platform-role-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  background: var(--bg-ivory);
+  border: 1px solid rgba(198, 161, 91, 0.12);
+  transition: var(--transition-smooth);
+}
+
+.platform-role-feature-item:hover {
+  background: var(--white);
+  border-color: var(--gold);
+  transform: translateX(2px);
+}
+
+.platform-role-feature-item .platform-item-icon-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+}
+
+.platform-role-feature-item .platform-item-name {
+  font-size: 12.5px;
   font-weight: 600;
   color: var(--primary-dark);
-  line-height: 1.3;
 }
 
 /* Mega Footer */
@@ -558,6 +738,42 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+  }
+
+  .mobile-platform-role-tabs {
+    display: flex;
+    gap: 6px;
+    padding: 4px;
+    background: var(--bg-ivory);
+    border-radius: 8px;
+    border: 1px solid rgba(198, 161, 91, 0.2);
+  }
+
+  .mobile-role-tab-btn {
+    flex: 1;
+    padding: 6px 4px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: var(--transition-smooth);
+  }
+
+  .mobile-role-tab-btn.active-tab {
+    background: var(--white);
+    color: var(--primary-dark);
+    font-weight: 700;
+    box-shadow: 0 1px 4px rgba(9, 21, 38, 0.08);
+  }
+
+  .mobile-platform-items-area {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .mobile-cat-group {

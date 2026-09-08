@@ -205,10 +205,26 @@ export const Navbar: React.FC = () => {
     },
   ];
 
-  // Platform features organized by user roles
-  const platformCategories: FeatureCategory[] = [
-    {
-      title: 'STUDENTS',
+  // Platform role selection state (null = default overview state)
+  type RoleType = 'students' | 'advocates' | 'firms';
+  const [selectedRole, setSelectedRole] = useState<RoleType | null>(null);
+
+  // Small curated list of Key Features for the default state
+  const KEY_FEATURES: FeatureItem[] = [
+    { name: 'Legal Research', desc: 'Precedent & case law search', href: '/legal-research', icon: <Search size={16} /> },
+    { name: 'Case Management', desc: 'Organize matters & timeline', href: '/cases', icon: <Briefcase size={16} /> },
+    { name: 'Document Analyzer', desc: 'AI-assisted document insights', href: '/document-analyzer', icon: <FileSearch size={16} /> },
+    { name: 'Drafting Lab', desc: 'Structured clause repository', href: '/drafting-lab', icon: <PenLine size={16} /> },
+    { name: 'AI Assistant', desc: 'Intelligent legal co-pilot', href: '/ai-assistant', icon: <Sparkles size={16} /> },
+  ];
+
+  const ROLE_CONFIG: Record<
+    RoleType,
+    { title: string; subtitle: string; items: FeatureItem[] }
+  > = {
+    students: {
+      title: 'Students & Law Scholars',
+      subtitle: 'Build strong research foundations, master bare acts, and draft effectively.',
       items: [
         { name: 'Law Library', desc: '', href: '/law-library', icon: <BookOpen size={16} /> },
         { name: 'Legal Research', desc: '', href: '/legal-research', icon: <Search size={16} /> },
@@ -219,13 +235,14 @@ export const Navbar: React.FC = () => {
         { name: 'Compare & Review', desc: '', href: '/compare-review', icon: <GitCompare size={16} /> },
       ],
     },
-    {
-      title: 'ADVOCATES / LAWYERS',
+    advocates: {
+      title: 'Advocates & Individual Practitioners',
+      subtitle: 'Comprehensive workspace for litigation, client matters, hearings, and daily practice.',
       items: [
         { name: 'Client Management', desc: '', href: '/client-management', icon: <Users size={16} /> },
         { name: 'Case Management', desc: '', href: '/cases', icon: <Briefcase size={16} /> },
-        { name: 'Hearings', desc: '', href: '/hearings', icon: <Calendar size={16} /> },
-        { name: 'Evidence', desc: '', href: '/evidence', icon: <Archive size={16} /> },
+        { name: 'Hearings & Dates', desc: '', href: '/hearings', icon: <Calendar size={16} /> },
+        { name: 'Evidence & Exhibits', desc: '', href: '/evidence', icon: <Archive size={16} /> },
         { name: 'Document Storage', desc: '', href: '/document-storage', icon: <FileText size={16} /> },
         { name: 'Case Drafts', desc: '', href: '/case-drafts', icon: <FileCheck size={16} /> },
         { name: 'Legal Research', desc: '', href: '/legal-research', icon: <Search size={16} /> },
@@ -236,13 +253,14 @@ export const Navbar: React.FC = () => {
         { name: 'My Journal', desc: '', href: '/my-journal', icon: <Mic size={16} /> },
       ],
     },
-    {
-      title: 'FIRMS',
+    firms: {
+      title: 'Law Firms & Legal Teams',
+      subtitle: 'End-to-end platform for team collaboration, billing, compliance, and enterprise practice.',
       items: [
         { name: 'Client Management', desc: '', href: '/client-management', icon: <Users size={16} /> },
         { name: 'Case Management', desc: '', href: '/cases', icon: <Briefcase size={16} /> },
-        { name: 'Hearings', desc: '', href: '/hearings', icon: <Calendar size={16} /> },
-        { name: 'Evidence', desc: '', href: '/evidence', icon: <Archive size={16} /> },
+        { name: 'Hearings & Dates', desc: '', href: '/hearings', icon: <Calendar size={16} /> },
+        { name: 'Evidence & Exhibits', desc: '', href: '/evidence', icon: <Archive size={16} /> },
         { name: 'Document Storage', desc: '', href: '/document-storage', icon: <FileText size={16} /> },
         { name: 'Case Drafts', desc: '', href: '/case-drafts', icon: <FileCheck size={16} /> },
         { name: 'Compare & Review', desc: '', href: '/compare-review', icon: <GitCompare size={16} /> },
@@ -256,7 +274,7 @@ export const Navbar: React.FC = () => {
         { name: 'My Journal', desc: '', href: '/my-journal', icon: <Mic size={16} /> },
       ],
     },
-  ];
+  };
 
   // Close dropdowns on click outside or Escape key
   useEffect(() => {
@@ -388,10 +406,11 @@ export const Navbar: React.FC = () => {
             {/* Desktop Platform Dropdown */}
             {platformDropdownOpen && (
               <div
-                className="features-mega-dropdown solutions-mega-dropdown animate-fade-in"
+                className="features-mega-dropdown platform-role-dropdown animate-fade-in"
                 role="region"
                 aria-label="Platform by Role"
               >
+                {/* Dropdown Header */}
                 <div className="mega-dropdown-header">
                   <div className="mega-header-text">
                     <span className="mega-eyebrow">PLATFORM BY ROLE</span>
@@ -407,27 +426,107 @@ export const Navbar: React.FC = () => {
                   </Link>
                 </div>
 
-                <div className="mega-dropdown-columns solutions-dropdown-columns">
-                  {platformCategories.map((cat, catIdx) => (
-                    <div key={catIdx} className="mega-category-column">
-                      <span className="mega-column-title">{cat.title}</span>
-                      <div className="solutions-items-list" role="list">
-                        {cat.items.map((item, itemIdx) => (
+                {/* Role Selector Tabs / Buttons */}
+                <div className="platform-role-selector-bar" role="tablist" aria-label="Select Legal Role">
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={selectedRole === 'students'}
+                    className={`platform-role-btn ${selectedRole === 'students' ? 'active-role' : ''}`}
+                    onClick={() => setSelectedRole(selectedRole === 'students' ? null : 'students')}
+                  >
+                    <BookOpen size={15} />
+                    <span>Students</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={selectedRole === 'advocates'}
+                    className={`platform-role-btn ${selectedRole === 'advocates' ? 'active-role' : ''}`}
+                    onClick={() => setSelectedRole(selectedRole === 'advocates' ? null : 'advocates')}
+                  >
+                    <Briefcase size={15} />
+                    <span>Advocates / Lawyers</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={selectedRole === 'firms'}
+                    className={`platform-role-btn ${selectedRole === 'firms' ? 'active-role' : ''}`}
+                    onClick={() => setSelectedRole(selectedRole === 'firms' ? null : 'firms')}
+                  >
+                    <Building2 size={15} />
+                    <span>Firms</span>
+                  </button>
+                </div>
+
+                {/* Body: Either Default State (Key Features) OR Selected Role Features */}
+                <div className="platform-role-content">
+                  {selectedRole === null ? (
+                    /* ================= DEFAULT STATE: KEY FEATURES ================= */
+                    <div className="platform-default-preview animate-fade-in">
+                      <div className="platform-preview-header">
+                        <span className="platform-preview-label">KEY FEATURES</span>
+                        <span className="platform-preview-hint">Select a role above to filter features tailored for your practice.</span>
+                      </div>
+                      <div className="platform-key-features-grid" role="list">
+                        {KEY_FEATURES.map((item, idx) => (
                           <Link
-                            key={itemIdx}
+                            key={idx}
                             href={item.href}
-                            className="solutions-feature-item"
+                            className="platform-key-feature-item"
                             onClick={handleFeatureItemClick}
                           >
-                            <span className="solutions-item-icon">{item.icon}</span>
-                            <span className="solutions-item-name">{item.name}</span>
+                            <div className="platform-item-icon-box">{item.icon}</div>
+                            <div className="platform-item-text">
+                              <span className="platform-item-name">{item.name}</span>
+                              <span className="platform-item-desc">{item.desc}</span>
+                            </div>
                           </Link>
                         ))}
                       </div>
                     </div>
-                  ))}
+                  ) : (
+                    /* ================= ROLE-SELECTED STATE ================= */
+                    <div className="platform-selected-role-view animate-fade-in">
+                      <div className="platform-role-meta-header">
+                        <div className="platform-role-meta-left">
+                          <span className="platform-role-active-tag">
+                            {selectedRole.toUpperCase()}
+                          </span>
+                          <h4 className="platform-role-meta-title">{ROLE_CONFIG[selectedRole].title}</h4>
+                          <p className="platform-role-meta-desc">{ROLE_CONFIG[selectedRole].subtitle}</p>
+                        </div>
+                        <button
+                          type="button"
+                          className="platform-reset-role-btn"
+                          onClick={() => setSelectedRole(null)}
+                          title="View default Key Features"
+                        >
+                          <span>Show All Roles</span>
+                        </button>
+                      </div>
+
+                      <div className="platform-role-items-grid" role="list">
+                        {ROLE_CONFIG[selectedRole].items.map((item, idx) => (
+                          <Link
+                            key={idx}
+                            href={item.href}
+                            className="platform-role-feature-item"
+                            onClick={handleFeatureItemClick}
+                          >
+                            <div className="platform-item-icon-box">{item.icon}</div>
+                            <span className="platform-item-name">{item.name}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
+                {/* Dropdown Footer */}
                 <div className="mega-dropdown-footer">
                   <span className="mega-footer-tag">One platform organized around how you actually practice.</span>
                   <Link
@@ -435,7 +534,7 @@ export const Navbar: React.FC = () => {
                     className="mega-footer-cta"
                     onClick={handleLinkClick}
                   >
-                    <span>Explore Platform Overview</span>
+                    <span>View Platform Overview</span>
                     <ArrowRight size={14} aria-hidden="true" />
                   </Link>
                 </div>
@@ -634,24 +733,49 @@ export const Navbar: React.FC = () => {
 
               {mobilePlatformExpanded && (
                 <div className="mobile-features-accordion animate-fade-in">
-                  {platformCategories.map((cat, idx) => (
-                    <div key={idx} className="mobile-cat-group">
-                      <span className="mobile-cat-title">{cat.title}</span>
-                      <div className="mobile-cat-items">
-                        {cat.items.map((item, itemIdx) => (
-                          <Link
-                            key={itemIdx}
-                            href={item.href}
-                            className="mobile-feature-sublink"
-                            onClick={handleFeatureItemClick}
-                          >
-                            <span className="mobile-sublink-icon">{item.icon}</span>
-                            <span className="mobile-sublink-name">{item.name}</span>
-                          </Link>
-                        ))}
-                      </div>
+                  <div className="mobile-platform-role-tabs">
+                    <button
+                      type="button"
+                      className={`mobile-role-tab-btn ${selectedRole === 'students' ? 'active-tab' : ''}`}
+                      onClick={() => setSelectedRole(selectedRole === 'students' ? null : 'students')}
+                    >
+                      Students
+                    </button>
+                    <button
+                      type="button"
+                      className={`mobile-role-tab-btn ${selectedRole === 'advocates' ? 'active-tab' : ''}`}
+                      onClick={() => setSelectedRole(selectedRole === 'advocates' ? null : 'advocates')}
+                    >
+                      Advocates / Lawyers
+                    </button>
+                    <button
+                      type="button"
+                      className={`mobile-role-tab-btn ${selectedRole === 'firms' ? 'active-tab' : ''}`}
+                      onClick={() => setSelectedRole(selectedRole === 'firms' ? null : 'firms')}
+                    >
+                      Firms
+                    </button>
+                  </div>
+
+                  <div className="mobile-platform-items-area">
+                    <span className="mobile-cat-title">
+                      {selectedRole ? ROLE_CONFIG[selectedRole].title.toUpperCase() : 'KEY FEATURES'}
+                    </span>
+                    <div className="mobile-cat-items">
+                      {(selectedRole ? ROLE_CONFIG[selectedRole].items : KEY_FEATURES).map((item, itemIdx) => (
+                        <Link
+                          key={itemIdx}
+                          href={item.href}
+                          className="mobile-feature-sublink"
+                          onClick={handleFeatureItemClick}
+                        >
+                          <span className="mobile-sublink-icon">{item.icon}</span>
+                          <span className="mobile-sublink-name">{item.name}</span>
+                        </Link>
+                      ))}
                     </div>
-                  ))}
+                  </div>
+
                   <Link
                     href="/platform"
                     className="mobile-view-all-features"

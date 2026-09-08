@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Building2, Briefcase, GraduationCap, CheckCircle2, ArrowRight } from 'lucide-react';
 import './ThreeAudiences.css';
 
@@ -18,7 +19,7 @@ export const ThreeAudiences: React.FC = () => {
         'Simple billing, invoices, and payment tracking',
       ],
       ctaText: 'Explore Firm Solutions',
-      ctaHref: '#firm-journey',
+      ctaHref: '/platform/firms',
     },
     {
       id: 'lawyers',
@@ -35,7 +36,7 @@ export const ThreeAudiences: React.FC = () => {
         'Get helpful answers to research questions in seconds',
       ],
       ctaText: 'Explore Lawyer Tools',
-      ctaHref: '#lawyer-journey',
+      ctaHref: '/platform/lawyers',
     },
     {
       id: 'students',
@@ -52,7 +53,7 @@ export const ThreeAudiences: React.FC = () => {
         'Learn with reliable information and clear citations',
       ],
       ctaText: 'Explore Student Access',
-      ctaHref: '#student-journey',
+      ctaHref: '/platform/students',
     },
   ];
 
@@ -91,10 +92,10 @@ export const ThreeAudiences: React.FC = () => {
                 ))}
               </ul>
 
-              <a href={item.ctaHref} className={`btn-audience-action ${item.featured ? 'btn-featured' : ''}`}>
+              <Link href={item.ctaHref} className={`btn-audience-action ${item.featured ? 'btn-featured' : ''}`}>
                 <span>{item.ctaText}</span>
                 <ArrowRight size={15} aria-hidden="true" />
-              </a>
+              </Link>
             </div>
           ))}
         </div>

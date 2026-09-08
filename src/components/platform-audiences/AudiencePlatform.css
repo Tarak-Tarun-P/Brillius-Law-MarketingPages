@@ -1,0 +1,413 @@
+/* ------------------------------------------------------------- */
+/* AUDIENCE-SPECIFIC PLATFORM PAGES STYLING                      */
+/* ------------------------------------------------------------- */
+
+.audience-platform-main {
+  position: relative;
+  width: 100%;
+  background: var(--bg-ivory);
+  overflow-x: hidden;
+}
+
+/* 01. HERO SECTION */
+.ap-hero-section {
+  position: relative;
+  padding: 120px 0 64px 0;
+  background: var(--bg-ivory);
+  overflow: hidden;
+  text-align: center;
+}
+
+.ap-hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(90px);
+}
+
+.ap-hero-glow.glow-gold {
+  top: -40px;
+  right: 18%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(198, 161, 91, 0.14) 0%, transparent 70%);
+}
+
+.ap-hero-glow.glow-navy {
+  top: 50px;
+  left: 12%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(9, 21, 38, 0.05) 0%, transparent 70%);
+}
+
+.ap-hero-bg-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.ap-hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.ap-hero-eyebrow-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.ap-hero-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.ap-hero-eyebrow-line {
+  display: inline-block;
+  width: 40px;
+  height: 1.5px;
+  background-color: var(--gold);
+  border-radius: 1px;
+}
+
+.ap-hero-headline {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--primary-dark);
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+}
+
+.ap-hero-description {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  max-width: 740px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ap-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-ap-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 24px;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 14px rgba(9, 21, 38, 0.15);
+}
+
+.btn-ap-primary:hover {
+  background-color: var(--secondary-navy);
+  transform: translateY(-1.5px);
+  box-shadow: var(--shadow-button-hover);
+}
+
+.btn-ap-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--primary-dark);
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 24px;
+  border: 1.5px solid rgba(9, 21, 38, 0.2);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.btn-ap-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold-dark);
+  background: rgba(198, 161, 91, 0.08);
+  transform: translateY(-1.5px);
+}
+
+/* 02. WHY BRILLIUSLAW VALUE SECTION */
+.ap-why-section {
+  position: relative;
+  padding: 72px 0 80px 0;
+  background: var(--white);
+  border-top: 1px solid rgba(198, 161, 91, 0.18);
+  border-bottom: 1px solid rgba(198, 161, 91, 0.18);
+}
+
+.ap-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.ap-why-card {
+  background: var(--bg-ivory);
+  border: 1px solid rgba(198, 161, 91, 0.2);
+  border-radius: 16px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.ap-why-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(9, 21, 38, 0.06);
+}
+
+.ap-why-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--white);
+  border: 1px solid rgba(198, 161, 91, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-dark);
+  margin-bottom: 18px;
+}
+
+.ap-why-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+}
+
+.ap-why-card-desc {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* 03. KEY WORKFLOWS SECTION */
+.ap-workflows-section {
+  position: relative;
+  padding: 88px 0;
+  background: var(--bg-ivory);
+}
+
+.ap-section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 48px auto;
+}
+
+.ap-section-tag {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.ap-section-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  margin-bottom: 14px;
+  letter-spacing: -0.015em;
+}
+
+.ap-section-subtext {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.ap-workflow-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.ap-workflow-step-card {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.ap-workflow-step-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(9, 21, 38, 0.06);
+}
+
+.ap-step-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.ap-step-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 6px;
+}
+
+.ap-step-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* 04. AUDIENCE FEATURE HIGHLIGHTS */
+.ap-features-section {
+  position: relative;
+  padding: 88px 0;
+  background: #FCFBF8;
+  border-top: 1px solid rgba(198, 161, 91, 0.18);
+}
+
+.ap-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.ap-feature-card {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.ap-feature-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(9, 21, 38, 0.08);
+}
+
+.ap-feature-card-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.ap-feature-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: var(--bg-ivory);
+  border: 1px solid rgba(198, 161, 91, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+  transition: var(--transition-smooth);
+}
+
+.ap-feature-card:hover .ap-feature-icon-box {
+  background: rgba(198, 161, 91, 0.18);
+  border-color: var(--gold);
+}
+
+.ap-feature-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.ap-feature-desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+
+.ap-feature-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  transition: var(--transition-smooth);
+}
+
+.ap-feature-card:hover .ap-feature-cta {
+  color: var(--gold-dark);
+  transform: translateX(2px);
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1024px) {
+  .ap-why-grid,
+  .ap-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ap-hero-section {
+    padding: 96px 0 48px 0;
+  }
+
+  .ap-hero-headline {
+    font-size: 36px;
+  }
+
+  .ap-hero-description {
+    font-size: 16px;
+  }
+
+  .ap-why-grid,
+  .ap-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ap-section-title {
+    font-size: 28px;
+  }
+
+  .ap-workflow-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}

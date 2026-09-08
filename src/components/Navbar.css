@@ -454,11 +454,34 @@
   gap: 3px;
 }
 
+.platform-role-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .platform-role-active-tag {
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--gold-dark);
+}
+
+.platform-role-page-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: var(--transition-smooth);
+}
+
+.platform-role-page-link:hover {
+  color: var(--gold-dark);
+  transform: translateX(2px);
 }
 
 .platform-role-meta-title {

@@ -493,9 +493,25 @@ export const Navbar: React.FC = () => {
                     <div className="platform-selected-role-view animate-fade-in">
                       <div className="platform-role-meta-header">
                         <div className="platform-role-meta-left">
-                          <span className="platform-role-active-tag">
-                            {selectedRole.toUpperCase()}
-                          </span>
+                          <div className="platform-role-badge-row">
+                            <span className="platform-role-active-tag">
+                              {selectedRole.toUpperCase()}
+                            </span>
+                            <Link
+                              href={
+                                selectedRole === 'students'
+                                  ? '/platform/students'
+                                  : selectedRole === 'advocates'
+                                  ? '/platform/lawyers'
+                                  : '/platform/firms'
+                              }
+                              className="platform-role-page-link"
+                              onClick={handleLinkClick}
+                            >
+                              <span>Explore {ROLE_CONFIG[selectedRole].title} Page</span>
+                              <ArrowRight size={12} />
+                            </Link>
+                          </div>
                           <h4 className="platform-role-meta-title">{ROLE_CONFIG[selectedRole].title}</h4>
                           <p className="platform-role-meta-desc">{ROLE_CONFIG[selectedRole].subtitle}</p>
                         </div>
